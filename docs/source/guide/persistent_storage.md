@@ -4,21 +4,21 @@ type: guide
 tier: all
 order: 87
 order_enterprise: 87
-meta_title: Set up persistent storage with Label Studio
-meta_description: Configure persistent storage with Label Studio hosted in the cloud to store uploaded data such as task data, user images, and more.
+meta_title: Set up persistent storage with Annotation Hub
+meta_description: Configure persistent storage with Annotation Hub hosted in the cloud to store uploaded data such as task data, user images, and more.
 section: "Install & Setup"
 ---
 
-If you host Label Studio in the cloud, you want to set up persistent storage for uploaded task data, user images, and more in the same cloud service as your deployment.
+If you host Annotation Hub in the cloud, you want to set up persistent storage for uploaded task data, user images, and more in the same cloud service as your deployment.
 
 Follow the steps relevant for your deployment. If you use Docker Compose, select the cloud service you want to use as persistent storage:
-* [Set up Amazon S3](#Set-up-Amazon-S3) for Label Studio deployments in Amazon Web Services (AWS).
-* [Set up Google Cloud Storage (GCS)](#Set-up-Google-Cloud-Storage) for Label Studio deployments in Google Cloud Platform.
-* [Set up Microsoft Azure Storage](#Set-up-Microsoft-Azure-Storage) for Label Studio deployments in Microsoft Azure.
+* [Set up Amazon S3](#Set-up-Amazon-S3) for Annotation Hub deployments in Amazon Web Services (AWS).
+* [Set up Google Cloud Storage (GCS)](#Set-up-Google-Cloud-Storage) for Annotation Hub deployments in Google Cloud Platform.
+* [Set up Microsoft Azure Storage](#Set-up-Microsoft-Azure-Storage) for Annotation Hub deployments in Microsoft Azure.
 
 ## Set up Amazon S3
 
-Set up Amazon S3 as the persistent storage for Label Studio hosted in AWS or using Docker Compose.
+Set up Amazon S3 as the persistent storage for Annotation Hub hosted in AWS or using Docker Compose.
 
 ### Create an S3 bucket
 
@@ -60,7 +60,7 @@ Set up Cross-Origin Resource Sharing (CORS) access to your bucket. See [Configur
 ```
 
 ### Configure the S3 bucket
-After you create an S3 bucket, set up the necessary IAM permissions to grant Label Studio access to your bucket. There are four ways that you can manage access to your S3 bucket:
+After you create an S3 bucket, set up the necessary IAM permissions to grant Annotation Hub access to your bucket. There are four ways that you can manage access to your S3 bucket:
 - Set up an **IAM role** with an OIDC provider (**recommended**).
 - Use **access keys**.
 - Set up an **IAM role** without an OIDC provider.
@@ -217,7 +217,7 @@ global:
 To create an IAM role without using OIDC in EKS, follow these steps.
 
 1. In the AWS console UI, go to **EKS > Clusters > `YOUR_CLUSTER_NAME` > Node Group**.
-2. Select the name of `YOUR_NODE_GROUP` with Label Studio deployed.
+2. Select the name of `YOUR_NODE_GROUP` with Annotation Hub deployed.
 3. On the **Details** page, locate and select the option for Node IAM Role ARN and choose to **Attach existing policies directly**.
 3. Select **Create policy** and attach the following policy, replacing `<YOUR_S3_BUCKET>` with the name of your bucket:
 ```json
@@ -313,7 +313,7 @@ STORAGE_AWS_FOLDER=""
 
 ## Set up Google Cloud Storage
 
-Set up Google Cloud Storage (GCS) as the persistent storage for Label Studio hosted in Google Cloud Platform (GCP) or Docker Compose.
+Set up Google Cloud Storage (GCS) as the persistent storage for Annotation Hub hosted in Google Cloud Platform (GCP) or Docker Compose.
 
 ### Create a GCS bucket
 
@@ -352,9 +352,9 @@ gsutil cors set cors-config.json gs://YOUR_BUCKET_NAME
 
 ### Configure the GCS bucket
 
-You can connect Label Studio to your GCS bucket using **Workload Identity** or **Access keys**.
+You can connect Annotation Hub to your GCS bucket using **Workload Identity** or **Access keys**.
 
-After you create a bucket and set up IAM permissions, connect Label Studio to your GCS bucket. There are three ways that you can connect to your bucket:
+After you create a bucket and set up IAM permissions, connect Annotation Hub to your GCS bucket. There are three ways that you can connect to your bucket:
 - Use Workload Identity to allow workloads in GKE to access your GCS bucket by impersonating the service account you created (**recommended**).
 - Create a service account key to use the service account outside Google Cloud.
 - Create a service account key to use with Docker Compose.
@@ -372,7 +372,7 @@ APP_SA="serviceAccount:<GCP_PROJECT_ID>.svc.id.goog[<K8S_NAMESPACE>/<HELM_RELEAS
 WORKER_SA="serviceAccount:<GCP_PROJECT_ID>.svc.id.goog[<K8S_NAMESPACE>/<HELM_RELEASE_NAME>-lse-rqworker]"
 ```
 
-2. Create an IAM policy binding between the Kubernetes service account on your cluster and the GCS service account you created, allowing the K8s service account for the Label Studio app and the related rqworkers to impersonate the other service account. From the command line, run the following:
+2. Create an IAM policy binding between the Kubernetes service account on your cluster and the GCS service account you created, allowing the K8s service account for the Annotation Hub app and the related rqworkers to impersonate the other service account. From the command line, run the following:
 ```shell
 gcloud iam service-accounts add-iam-policy-binding ${GCP_SA} \
     --role roles/iam.workloadIdentityUser \
@@ -476,7 +476,7 @@ GOOGLE_APPLICATION_CREDENTIALS="/opt/heartex/secrets/key.json"
 
 ## Set up Microsoft Azure Storage
 
-Create a Microsoft Azure Storage container to use as persistent storage with Label Studio.
+Create a Microsoft Azure Storage container to use as persistent storage with Annotation Hub.
 
 ### Create a Storage container
 
@@ -517,7 +517,7 @@ Set up CORS access to your bucket. See [Configuring cross-origin resource sharin
 
 ### Configure the Azure container
 
-You can connect Label Studio to your Azure container using account keys in Kubernetes or account keys in Docker Compose. Choose the option relevant to your Label Studio deployment.
+You can connect Annotation Hub to your Azure container using account keys in Kubernetes or account keys in Docker Compose. Choose the option relevant to your Annotation Hub deployment.
 
 <div class="code-tabs">
   <div data-name="Kubernetes">

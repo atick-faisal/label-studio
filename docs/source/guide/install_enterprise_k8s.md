@@ -1,40 +1,40 @@
 ---
-title: Deploy Label Studio Enterprise on Kubernetes
+title: Deploy Annotation Hub Enterprise on Kubernetes
 short: Install using Kubernetes
 tier: enterprise
 type: guide
 order: 0
 order_enterprise: 69
-meta_title: Deploy Label Studio Enterprise on Kubernetes
-meta_description: Deploy Label Studio Enterprise on Kubernetes, such as on Amazon Elastic Container Service for Kubernetes, to create machine learning and data science projects in a scalable containerized environment. 
+meta_title: Deploy Annotation Hub Enterprise on Kubernetes
+meta_description: Deploy Annotation Hub Enterprise on Kubernetes, such as on Amazon Elastic Container Service for Kubernetes, to create machine learning and data science projects in a scalable containerized environment. 
 section: "Install & Setup"
 parent_enterprise: "install_enterprise"
 
 ---
 
-Deploy Label Studio Enterprise on a Kubernetes Cluster using Helm 3. You can use this Helm chart to set up Label Studio Enterprise for deployment onto a Kubernetes cluster and install, upgrade, and manage the application. 
+Deploy Annotation Hub Enterprise on a Kubernetes Cluster using Helm 3. You can use this Helm chart to set up Annotation Hub Enterprise for deployment onto a Kubernetes cluster and install, upgrade, and manage the application. 
 
 Your Kubernetes cluster can be self-hosted or installed somewhere such as Amazon EKS. See the Amazon tutorial on how to [Deploy a Kubernetes Application with Amazon Elastic Container Service for Kubernetes](https://aws.amazon.com/getting-started/hands-on/deploy-kubernetes-app-amazon-eks/) for more about deploying an app on Amazon EKS.
 
 <div class="enterprise-only">
 
 !!! warning
-    To install Label Studio Community Edition, see <a href="https://labelstud.io/guide/install_k8s.html">Deploy Label Studio on Kubernetes</a>. This page is specific to the Enterprise version of Label Studio.
+    To install Annotation Hub Community Edition, see <a href="https://labelstud.io/guide/install_k8s.html">Deploy Annotation Hub on Kubernetes</a>. This page is specific to the Enterprise version of Annotation Hub.
 
 </div>
 
-This high-level architecture diagram that outlines the main components of a Label Studio Enterprise deployment.
+This high-level architecture diagram that outlines the main components of a Annotation Hub Enterprise deployment.
 
 <img src="/images/LSE_k8s_scheme.png"/>
 
 !!! warning
-    Label Studio Enterprise 2.2.9 decommissioned MinIO as a service.
+    Annotation Hub Enterprise 2.2.9 decommissioned MinIO as a service.
 
-Label Studio Enterprise runs on Python and uses rqworkers to perform additional tasks. Metadata and annotations are stored in a bundled version of PostgreSQL that functions as persistent storage. If you host Label Studio Enterprise in the cloud, use [persistent storage in the cloud](persistent_storage.html) instead of MinIO.
+Annotation Hub Enterprise runs on Python and uses rqworkers to perform additional tasks. Metadata and annotations are stored in a bundled version of PostgreSQL that functions as persistent storage. If you host Annotation Hub Enterprise in the cloud, use [persistent storage in the cloud](persistent_storage.html) instead of MinIO.
 
-## Install Label Studio Enterprise on Kubernetes
+## Install Annotation Hub Enterprise on Kubernetes
 
-If you want to install Label Studio Enterprise on Kubernetes and you have unrestricted access to the internet from your K8s cluster, follow these steps. 
+If you want to install Annotation Hub Enterprise on Kubernetes and you have unrestricted access to the internet from your K8s cluster, follow these steps. 
 
 1. Verify that you meet the [Required software prerequisites](#Required-software-prerequisites) and review the [capacity planning](#Capacity-planning) guidance.
 2. [Prepare the Kubernetes cluster](#Prepare-the-Kubernetes-cluster).
@@ -45,9 +45,9 @@ If you want to install Label Studio Enterprise on Kubernetes and you have unrest
 7. [Configure a values.yaml file](#Configure-values-yaml).
 8. (Optional) [Set up TLS for PostgreSQL](#Optional-set-up-TLS-for-PostgreSQL)
 9. (Optional) [Set up TLS for Redis](#Optional-set-up-TLS-for-Redis)
-10. [Use Helm to install Label Studio Enterprise on your Kubernetes cluster](#Use-Helm-to-install-Label-Studio-Enterprise-on-your-Kubernetes-cluster).
+10. [Use Helm to install Annotation Hub Enterprise on your Kubernetes cluster](#Use-Helm-to-install-Label-Studio-Enterprise-on-your-Kubernetes-cluster).
 
-If you use a proxy to access the internet from your Kubernetes cluster, or it is airgapped from the internet, see how to [Install Label Studio Enterprise without public internet access](install_k8s_airgapped.html).
+If you use a proxy to access the internet from your Kubernetes cluster, or it is airgapped from the internet, see how to [Install Annotation Hub Enterprise without public internet access](install_k8s_airgapped.html).
 
 ### Required software prerequisites
 
@@ -56,7 +56,7 @@ If you use a proxy to access the internet from your Kubernetes cluster, or it is
 - Redis version 6.0.5 or higher
 - PostgreSQL version 11.9 or higher
 
-This chart has been tested and confirmed to work with the [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/) and [cert-manager](https://cert-manager.io/docs/). See [Set up an ingress controller for Label Studio Kubernetes deployments](ingress_config.html) for more on ingress settings with Label Studio. 
+This chart has been tested and confirmed to work with the [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/) and [cert-manager](https://cert-manager.io/docs/). See [Set up an ingress controller for Annotation Hub Kubernetes deployments](ingress_config.html) for more on ingress settings with Annotation Hub. 
 
 Your Kubernetes cluster can be self-hosted or installed somewhere such as Amazon EKS. 
 
@@ -64,7 +64,7 @@ Your Kubernetes cluster can be self-hosted or installed somewhere such as Amazon
 
 To plan the capacity of your Kubernetes cluster, refer to these guidelines. 
 
-Label Studio Enterprise has the following default configurations for resource requests, resource limits, and replica counts:
+Annotation Hub Enterprise has the following default configurations for resource requests, resource limits, and replica counts:
 
 <div class="enterprise-only">
 
@@ -116,12 +116,12 @@ The `default` queue is the most extensive queue. It is recommended to use 4 time
 
 ### Prepare the Kubernetes cluster
 
-Before installing Label Studio, prepare the Kubernetes cluster with [kubectl](https://kubernetes.io/docs/reference/kubectl/). 
+Before installing Annotation Hub, prepare the Kubernetes cluster with [kubectl](https://kubernetes.io/docs/reference/kubectl/). 
 
-Install Label Studio Enterprise and set up a PostgreSQL and Redis databases to store relevant Label Studio Enterprise configurations and annotations using the Helm chart. You must configure specific values for your deployment in a YAML file that you specify when installing using Helm.
+Install Annotation Hub Enterprise and set up a PostgreSQL and Redis databases to store relevant Annotation Hub Enterprise configurations and annotations using the Helm chart. You must configure specific values for your deployment in a YAML file that you specify when installing using Helm.
 
 ### Add the Helm chart repository
-Add the Helm chart repository to easily install and update Label Studio.
+Add the Helm chart repository to easily install and update Annotation Hub.
 
 1. From the command line:
    ```shell
@@ -138,14 +138,14 @@ Add the Helm chart repository to easily install and update Label Studio.
 ### Configure Kubernetes secrets
 
 1. Ensure that you have license key and Docker Hub credentials or request them from Heartex Team.
-2. Create a key to pull the latest Label Studio Enterprise image from the Docker registry. From the command line of your cluster, run the following:
+2. Create a key to pull the latest Annotation Hub Enterprise image from the Docker registry. From the command line of your cluster, run the following:
     ```shell
     kubectl create secret docker-registry heartex-pull-key \
         --docker-server=https://index.docker.io/v2/ \
         --docker-username=heartexlabs \
         --docker-password=<CUSTOMER_PASSWORD>
     ```
-3. Create the Label Studio Enterprise license as a Kubernetes secret. You can specify it as a file or as a specific URL.
+3. Create the Annotation Hub Enterprise license as a Kubernetes secret. You can specify it as a file or as a specific URL.
    From the command line, specify the license as a file:
    ```shell
    kubectl create secret generic lse-license --from-file=license=path/to/lic
@@ -161,9 +161,9 @@ Add the Helm chart repository to easily install and update Label Studio.
 
 ### Configure values.yaml 
 
-You must configure a `values.yaml` file for your Label Studio Enterprise deployment. The following file contains default values for a minimal installation of Label Studio. This chart has been tested and confirmed to work with the [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/) and [cert-manager](https://cert-manager.io/docs/).
+You must configure a `values.yaml` file for your Annotation Hub Enterprise deployment. The following file contains default values for a minimal installation of Annotation Hub. This chart has been tested and confirmed to work with the [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/) and [cert-manager](https://cert-manager.io/docs/).
 
-Example `values.yaml` file for a minimal installation of Label Studio Enterprise Enterprise:
+Example `values.yaml` file for a minimal installation of Annotation Hub Enterprise Enterprise:
 ```yaml
 global:
   image:
@@ -206,7 +206,7 @@ enterprise:
 app:
   # High Availability (HA) mode: adjust according to your resources
   replicas: 1
-  # Ingress config for Label Studio
+  # Ingress config for Annotation Hub
   ingress:
     enabled: true
     host: studio.yourdomain.com
@@ -220,7 +220,7 @@ app:
 #        hosts:
 #          - studio.yourdomain.com
 
-# default compute resources run Label Studio Enterprise for a basic installation. adjust according to your business needs
+# default compute resources run Annotation Hub Enterprise for a basic installation. adjust according to your business needs
   resources:
     requests:
       memory: 1024Mi
@@ -257,7 +257,7 @@ Adjust the included defaults to reflect your environment and copy these into a n
 </div>
 
 ## Optional: set up TLS for PostgreSQL
-To configure Label Studio Enterprise to use TLS for end-client connections with PostgreSQL, do the following:
+To configure Annotation Hub Enterprise to use TLS for end-client connections with PostgreSQL, do the following:
 
 1. Enable TLS for your PostgreSQL instance and save Root TLS certificate, client certificate and its key for the next steps.
 2. Create a Kubernetes secret with your certificates, replacing `<PATH_TO_CA>`, `<PATH_TO_CLIENT_CRT>` and `<PATH_TO_CLIENT_KEY>` with paths to your certificates:
@@ -281,10 +281,10 @@ global:
       pgSslKeySecretKey: "client.key"
 ```
 
-4. Install or upgrade Label Studio Enterprise using Helm.
+4. Install or upgrade Annotation Hub Enterprise using Helm.
 
 ## Optional: set up TLS for Redis
-To configure Label Studio Enterprise to use TLS for end-client connections with Redis, do the following:
+To configure Annotation Hub Enterprise to use TLS for end-client connections with Redis, do the following:
 
 1. Enable TLS for your Redis instance and save Root TLS certificate, client certificate and its key for the next steps.
 2. Create a Kubernetes secret with your certificates, replacing `<PATH_TO_CA>`, `<PATH_TO_CLIENT_CRT>` and `<PATH_TO_CLIENT_KEY>` with paths to your certificates:
@@ -308,14 +308,14 @@ global:
       redisSslKeyFileSecretKey: "client.key"
 ```
 
-4. Install or upgrade Label Studio Enterprise using Helm.
+4. Install or upgrade Annotation Hub Enterprise using Helm.
 
-## Use Helm to install Label Studio Enterprise on your Kubernetes cluster
+## Use Helm to install Annotation Hub Enterprise on your Kubernetes cluster
 
-Use Helm to install Label Studio Enterprise on your Kubernetes cluster. Provide your custom resource definitions YAML file. Specify any environment variables that you need to set for your Label Studio Enterprise installation using the `--set` argument with the `helm install` command.
+Use Helm to install Annotation Hub Enterprise on your Kubernetes cluster. Provide your custom resource definitions YAML file. Specify any environment variables that you need to set for your Annotation Hub Enterprise installation using the `--set` argument with the `helm install` command.
 
 !!! note
-    If you are deploying to a production environment, you should set the `SSRF_PROTECTION_ENABLED: true` environment variable. See [Secure Label Studio](security#Enable-SSRF-protection-for-production-environments).
+    If you are deploying to a production environment, you should set the `SSRF_PROTECTION_ENABLED: true` environment variable. See [Secure Annotation Hub](security#Enable-SSRF-protection-for-production-environments).
 
 From the command line, run the following:
 ```shell
@@ -327,27 +327,27 @@ After installing, check the status of the Kubernetes pod creation:
 kubectl get pods
 ```
 
-## Restart Label Studio Enterprise using Helm
+## Restart Annotation Hub Enterprise using Helm
 
 Restart your Helm release by doing the following from the command line:
 
-1. Identify the &lt;RELEASE_NAME&gt; of the latest Label Studio Enterprise release:
+1. Identify the &lt;RELEASE_NAME&gt; of the latest Annotation Hub Enterprise release:
 ```shell
 helm list
 ```
-2. Restart the rqworker for Label Studio:
+2. Restart the rqworker for Annotation Hub:
 ```shell
 kubectl rollout restart deployment/<RELEASE_NAME>-ls-rqworker
 ```
-3. Restart the Label Studio Enterprise app:
+3. Restart the Annotation Hub Enterprise app:
 ```shell
 kubectl rollout restart deployment/<RELEASE_NAME>-ls-app
 ```
 
 
-## Uninstall Label Studio Enterprise using Helm
+## Uninstall Annotation Hub Enterprise using Helm
 
-To uninstall Label Studio Enterprise using Helm, delete the configuration.
+To uninstall Annotation Hub Enterprise using Helm, delete the configuration.
 
 From the command line, run the following:
 ```shell

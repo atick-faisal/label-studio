@@ -1,57 +1,57 @@
 ---
-title: Label Studio Python SDK 
+title: Annotation Hub Python SDK 
 short: Python SDK 
 type: guide
 tier: all
 order: 404
 order_enterprise: 404
-meta_title: Label Studio Python SDK 
-meta_description: Overview information for the Label Studio Python SDK.
+meta_title: Annotation Hub Python SDK 
+meta_description: Overview information for the Annotation Hub Python SDK.
 section: "Integrate & Extend"
 
 ---
 
 <div class="enterprise-only">
 
-The [**Label Studio Python SDK**](https://labelstud.io/sdk/index.html) allows you to seamlessly integrate Label Studio into your data science and machine learning pipelines.
+The [**Annotation Hub Python SDK**](https://labelstud.io/sdk/index.html) allows you to seamlessly integrate Annotation Hub into your data science and machine learning pipelines.
 
 </div>
 
 <div class="opensource-only">
 
-The [**Label Studio Python SDK**](https://api.labelstud.io/api-reference/introduction/getting-started) allows you to seamlessly integrate Label Studio into your data science and machine learning pipelines.
+The [**Annotation Hub Python SDK**](https://api.labelstud.io/api-reference/introduction/getting-started) allows you to seamlessly integrate Annotation Hub into your data science and machine learning pipelines.
 
 </div>
 
-The SDK provides a set of predefined classes and methods to interact with the Label Studio API directly from your Python scripts, making it easier to manage projects, import tasks, and handle annotations. 
+The SDK provides a set of predefined classes and methods to interact with the Annotation Hub API directly from your Python scripts, making it easier to manage projects, import tasks, and handle annotations. 
 
 
 ## Benefits to using the Python SDK
 
 - **Streamlined API Interactions**: The SDK simplifies API interactions with user-friendly Python methods and classes.
-- **Integration**: Easily integrate Label Studio actions into your existing data science workflows.
+- **Integration**: Easily integrate Annotation Hub actions into your existing data science workflows.
 - **Automation**: Automate repetitive tasks such as project creation, task imports, and data exports.
 - **Enhanced Data Preparation**: Use filters and custom configurations to prepare and manage data efficiently, ensuring high-quality annotations.
 - **Asynchronous Operations**: Perform asynchronous data operations for better performance and handling of large datasets.
 
 
-## Start using the Label Studio Python SDK
+## Start using the Annotation Hub Python SDK
 
 1. Install the SDK:
    `pip install label-studio-sdk`
 2. In your Python script, do the following:
    - Import the SDK.
-   - Define your API key and Label Studio URL. You can generate a key from your [**Account & Settings** page](user_account#Personal-access-token).
+   - Define your API key and Annotation Hub URL. You can generate a key from your [**Account & Settings** page](user_account#Personal-access-token).
    - Connect to the API.
 ```python
-# Define the URL where Label Studio is accessible and the API key for your user account
+# Define the URL where Annotation Hub is accessible and the API key for your user account
 LABEL_STUDIO_URL = 'http://localhost:8080'
 API_KEY = 'd6f8a2622d39e9d89ff0dfef1a80ad877f4ee9e3'
 
 # Import the SDK and the client module
 from label_studio_sdk.client import LabelStudio
 
-# Connect to the Label Studio API and check the connection
+# Connect to the Annotation Hub API and check the connection
 ls = LabelStudio(base_url=LABEL_STUDIO_URL, api_key=API_KEY)
 ```
 
@@ -94,7 +94,7 @@ If you're looking for the documentation for the older version, you can find it [
 ## Resources and links
 
 * [**Getting started with the Python SDK**](https://api.labelstud.io/api-reference/introduction/getting-started) - This will lead you through several basic tasks using the SDK. 
-* [**API reference**](https://api.labelstud.io/api-reference/introduction/getting-started) - This is our reference for all available Label Studio API requests and parameters. 
-* [**Label Studio Python Library README**](https://github.com/HumanSignal/label-studio-sdk) - This includes getting started information and more code examples.  
-* [**5 Tips and Tricks for Label Studio’s API and SDK**](https://labelstud.io/blog/5-tips-and-tricks-for-label-studio-s-api-and-sdk/) - This provides additional user guidance and more examples.
+* [**API reference**](https://api.labelstud.io/api-reference/introduction/getting-started) - This is our reference for all available Annotation Hub API requests and parameters. 
+* [**Annotation Hub Python Library README**](https://github.com/HumanSignal/label-studio-sdk) - This includes getting started information and more code examples.  
+* [**5 Tips and Tricks for Annotation Hub’s API and SDK**](https://labelstud.io/blog/5-tips-and-tricks-for-label-studio-s-api-and-sdk/) - This provides additional user guidance and more examples.
 

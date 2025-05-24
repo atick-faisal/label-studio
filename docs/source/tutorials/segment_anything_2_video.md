@@ -5,7 +5,7 @@ tier: all
 order: 15
 hide_menu: true
 hide_frontmatter_title: true
-meta_title: Using SAM2 with Label Studio for Video Annotation
+meta_title: Using SAM2 with Annotation Hub for Video Annotation
 categories:
     - Computer Vision
     - Video Annotation
@@ -14,9 +14,9 @@ categories:
 image: "/tutorials/sam2-video.png"
 ---
 
-# Using SAM2 with Label Studio for Video Annotation
+# Using SAM2 with Annotation Hub for Video Annotation
 
-This guide describes the simplest way to start using **SegmentAnything 2** with Label Studio.
+This guide describes the simplest way to start using **SegmentAnything 2** with Annotation Hub.
 
 This repository is specifically for working with object tracking in videos. For working with images, 
 see the [segment_anything_2_image repository](https://github.com/HumanSignal/label-studio-ml-backend/tree/master/label_studio_ml/examples/segment_anything_2_image)
@@ -25,7 +25,7 @@ see the [segment_anything_2_image repository](https://github.com/HumanSignal/lab
 
 ## Before you begin
 
-Before you begin, you must install the [Label Studio ML backend](https://github.com/HumanSignal/label-studio-ml-backend?tab=readme-ov-file#quickstart). 
+Before you begin, you must install the [Annotation Hub ML backend](https://github.com/HumanSignal/label-studio-ml-backend?tab=readme-ov-file#quickstart). 
 
 This tutorial uses the [`segment_anything_2_video` example](https://github.com/HumanSignal/label-studio-ml-backend/tree/master/label_studio_ml/examples/segment_anything_2_video). 
 
@@ -54,7 +54,7 @@ cd ../
 label-studio-ml start ./segment_anything_2_video
 ```
 Note that if you're running in a cloud server, you'll need to run on an exposed port. To change the port, add `-p <port number>` to the end of the start command above.
-5. Connect running ML backend server to Label Studio: go to your project `Settings -> Machine Learning -> Add Model` and specify `http://localhost:9090` as a URL. Read more in the official [Label Studio documentation](https://labelstud.io/guide/ml#Connect-the-model-to-Label-Studio).
+5. Connect running ML backend server to Annotation Hub: go to your project `Settings -> Machine Learning -> Add Model` and specify `http://localhost:9090` as a URL. Read more in the official [Annotation Hub documentation](https://labelstud.io/guide/ml#Connect-the-model-to-Label-Studio).
  Again, if you're running in the cloud, you'll need to replace this localhost location with whatever the external ip address is of your container, along with the exposed port.
 
 # Labeling Config

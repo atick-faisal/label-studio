@@ -42,7 +42,7 @@ Please note that our documentation and company pages, served via https://app.hum
 
 ## Usage Limits
 
-Label Studio imposes rate limits on a per-Access Token basis. If a request exceeds the rate limit, a response with a 429 status code is returned. Clients are advised to pause and retry after a short delay in such instances.
+Annotation Hub imposes rate limits on a per-Access Token basis. If a request exceeds the rate limit, a response with a 429 status code is returned. Clients are advised to pause and retry after a short delay in such instances.
 
 | Path                     | Rate limit                                             |
 |--------------------------|--------------------------------------------------------|

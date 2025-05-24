@@ -67,7 +67,7 @@ const IMAGE_PRELOAD_COUNT = 3;
  * } -->
  * @name Image
  * @meta_title Image Tags for Images
- * @meta_description Customize Label Studio with the Image tag to annotate images for computer vision machine learning and data science projects.
+ * @meta_description Customize Annotation Hub with the Image tag to annotate images for computer vision machine learning and data science projects.
  * @param {string} name                       - Name of the element
  * @param {string} value                      - Data field containing a path or URL to the image
  * @param {string} [valueList]                - References a variable that holds a list of image URLs. For an example, see the [Multi-Page Document Annotation](/templates/multi-page-document-annotation) template.

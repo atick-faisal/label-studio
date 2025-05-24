@@ -5,8 +5,8 @@ tier: all
 order: 65
 hide_menu: true
 hide_frontmatter_title: true
-meta_title: Object detection in images with Label Studio and MMDetection
-meta_description: This is a tutorial on how to use the example MMDetection model backend with Label Studio for image segmentation tasks.
+meta_title: Object detection in images with Annotation Hub and MMDetection
+meta_description: This is a tutorial on how to use the example MMDetection model backend with Annotation Hub for image segmentation tasks.
 categories:
     - Computer Vision
     - Object Detection
@@ -20,14 +20,14 @@ image: "/tutorials/openmmlab.png"
 
 https://mmdetection.readthedocs.io/en/latest/
 
-This example demonstrates how to use the MMDetection model with Label Studio to annotate images with bounding boxes. 
+This example demonstrates how to use the MMDetection model with Annotation Hub to annotate images with bounding boxes. 
 The model is based on the YOLOv3 architecture with a MobileNetV2 backbone and trained on the COCO dataset. 
 
 ![screenshot.png](/tutorials/screenshot.png)
 
 ## Before you begin
 
-Before you begin, you must install the [Label Studio ML backend](https://github.com/HumanSignal/label-studio-ml-backend?tab=readme-ov-file#quickstart). 
+Before you begin, you must install the [Annotation Hub ML backend](https://github.com/HumanSignal/label-studio-ml-backend?tab=readme-ov-file#quickstart). 
 
 This tutorial uses the [`mmdetection-3` example](https://github.com/HumanSignal/label-studio-ml-backend/tree/master/label_studio_ml/examples/mmdetection-3). 
 
@@ -52,7 +52,7 @@ There are two possible variants of labeling configurations that can be used:
 
 1. In this example, you can provide labels "as is" and they will be automatically mapped to MMDetection model's labels.
 
-    This will work for simple use cases. For example, Label Studio `Airplane` maps to MMDetection `airplane`.
+    This will work for simple use cases. For example, Annotation Hub `Airplane` maps to MMDetection `airplane`.
 
     ```
     <View>
@@ -75,14 +75,14 @@ There are two possible variants of labeling configurations that can be used:
     </View>
     ```
 
-In this example, you can combine multiple labels into one Label Studio annotation the. For example, Label Studio `Vehicle` maps to MMDetection "airplane" and "car".
+In this example, you can combine multiple labels into one Annotation Hub annotation the. For example, Annotation Hub `Vehicle` maps to MMDetection "airplane" and "car".
 
 
 ## Run without Docker
 
 **It's highly recommended to use Docker, it is the best way to avoid many common issues.**
 
-1. Clone the Label Studio ML Backend repository in your directory of choice:
+1. Clone the Annotation Hub ML Backend repository in your directory of choice:
 
 ```
 git clone https://github.com/HumanSignal/label-studio-ml-backend
@@ -144,7 +144,7 @@ export CONFIG_FILE=yolov3_mobilenetv2_8xb24-320-300e_coco.py
 export DEVICE=cpu
 export SCORE_THRESHOLD=0.5
 
-# Specify the Label Studio URL and API key to access
+# Specify the Annotation Hub URL and API key to access
 # uploaded, local storage and cloud storage files.
 # Do not use 'localhost' as it does not work within Docker containers.
 # Use prefix 'http://' or 'https://' for the URL always.

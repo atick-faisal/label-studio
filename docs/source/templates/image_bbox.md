@@ -5,7 +5,7 @@ category: Computer Vision
 cat: computer-vision
 order: 103
 meta_title: Image Object Detection Data Labeling Template
-meta_description: Template for performing object detection with rectangular bounding boxes with Label Studio for your machine learning and data science projects.
+meta_description: Template for performing object detection with rectangular bounding boxes with Annotation Hub for your machine learning and data science projects.
 ---
 
 
@@ -20,15 +20,15 @@ If you want to perform object detection, you need to create a labeled dataset. U
 
 Note that when you rotate rectangles (bounding boxes), the anchor point is different depending on how you perform the rotation.
 
-### Bounding box rotation in Label Studio UI
+### Bounding box rotation in Annotation Hub UI
 
 If you rotate a bounding box using your mouse in the labeling interface, the rotation anchor point is the **center** of the rectangle.
 
 ![Diagram showing mouse rotation](../images/rectangle_ui_rotation.jpg)
 
-### Bounding box rotation in the Label Studio results
+### Bounding box rotation in the Annotation Hub results
 
-If you rotate by directly editing the rotation angle under the **Info** panel of the labeling interface, the rotation anchor point is the **top left** of the rectangle. This is also how it is saved in the Label Studio `annotation.result[]['value']` (regardless of how you performed the rotation): 
+If you rotate by directly editing the rotation angle under the **Info** panel of the labeling interface, the rotation anchor point is the **top left** of the rectangle. This is also how it is saved in the Annotation Hub `annotation.result[]['value']` (regardless of how you performed the rotation): 
 
 ```json
  { 

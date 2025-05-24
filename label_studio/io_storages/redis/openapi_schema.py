@@ -23,7 +23,7 @@ _redis_import_storage_schema = openapi.Schema(
             type=openapi.TYPE_BOOLEAN,
             description='Interpret objects as BLOBs and generate URLs. For example, if your bucket contains images, '
             'you can use this option to generate URLs for these images. '
-            'If set to False, it will read the content of the file and load it into Label Studio.',
+            'If set to False, it will read the content of the file and load it into Annotation Hub.',
             default=False,
         ),
         **_common_redis_storage_schema_properties,

@@ -13,7 +13,7 @@ tier: enterprise
 
 Plugins allow you to run custom JavaScript code directly within the labeling interface. 
 
-This feature empowers you to extend and customize Label Studio’s behavior. For example, you can add data validations, dynamic UI enhancements, or integrating external libraries, thereby tailoring the labeling workflow to your specific requirements. By leveraging the [LSI (Label Studio Interface) object](custom#Label-Studio-Interface-LSI), you can manage events, import additional scripts, and access task and annotation data on the fly, ensuring that your custom logic executes each time an annotation is rendered.
+This feature empowers you to extend and customize Annotation Hub’s behavior. For example, you can add data validations, dynamic UI enhancements, or integrating external libraries, thereby tailoring the labeling workflow to your specific requirements. By leveraging the [LSI (Annotation Hub Interface) object](custom#Label-Studio-Interface-LSI), you can manage events, import additional scripts, and access task and annotation data on the fly, ensuring that your custom logic executes each time an annotation is rendered.
 
 Plugins are configured on a per-project basis from **Project > Settings > Labeling Interface**. 
 
@@ -22,7 +22,7 @@ Plugins are configured on a per-project basis from **Project > Settings > Labeli
 
 ### How can I get plugins?
 
-Plugins are only available for Label Studio Enterprise users, and they must be enabled upon request. 
+Plugins are only available for Annotation Hub Enterprise users, and they must be enabled upon request. 
 
 You can contact your account manager, open a [support ticket](mailto:support@humansignal.com), or click **Request Access** from the plugins panel under **Project > Settings > Labeling Interface**.  
 
@@ -33,7 +33,7 @@ Because plugins operate in real-time on the annotator's browser, they come with 
 
 ### Are plugins available for Starter Cloud users?
 
-No, they are only available in Label Studio Enterprise. 
+No, they are only available in Annotation Hub Enterprise. 
 
 ### Who can access plugins?
 
@@ -54,7 +54,7 @@ Changes you make to the provided plugins stay within the context of the project.
 Yes! Instead of choosing an out-of-the box plugin to modify, you can write your own from scratch. See [Build Your Own Custom Plugins](custom).
 
 !!! note
-    If you build a plugin that you'd be willing to share with other Label Studio Enterprise users, we invite you to submit it to the [Plugins repo](https://github.com/HumanSignal/label-studio-plugins). 
+    If you build a plugin that you'd be willing to share with other Annotation Hub Enterprise users, we invite you to submit it to the [Plugins repo](https://github.com/HumanSignal/label-studio-plugins). 
 
 ### Can I insert multiple plugins?
 
@@ -63,10 +63,10 @@ Yes, they stack.
 
 ### Where can I learn more?
 
-* [Label Studio Interface reference](custom#Label-Studio-Interface-LSI)
+* [Annotation Hub Interface reference](custom#Label-Studio-Interface-LSI)
 * [Plugins for projects](/guide/plugins)
 * [Plugins repo](https://github.com/HumanSignal/label-studio-plugins)
-* [Label Studio Frontend reference](/guide/frontend_reference.html#Available-events)
+* [Annotation Hub Frontend reference](/guide/frontend_reference.html#Available-events)
 
 
 

@@ -6,31 +6,31 @@ type: guide
 order: 0
 order_enterprise: 375
 meta_title: User roles and permissions
-meta_description: A description of the user roles and permissions available in Label Studio Enterprise. 
+meta_description: A description of the user roles and permissions available in Annotation Hub Enterprise. 
 section: "Manage Your Organization"
 parent: "manage_users"
 parent_enterprise: "manage_users"
 date: 2024-02-05 17:19:21
 ---
 
-Your user role determines your level of access to actions and information in Label Studio. 
+Your user role determines your level of access to actions and information in Annotation Hub. 
 
 Access can be further refined through workspace and project membership. For more information, see [Project setup](setup_project). 
 
-## Roles in Label Studio Enterprise
+## Roles in Annotation Hub Enterprise
 
 For information on how to assign users to roles, see [Manage user accounts](admin_manage_lse).
 
 | Role          | Description                                                                                                                                                                                  |
 | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Owner**         | Manages the organization and has full permissions at all levels.<br><br>This is not an assignable role, and there is only one Owner per organization. By default, the Owner is tied to the account that created the Label Studio organization. To change the Owner, you will need to [open a support ticket](https://support.humansignal.com/hc/en-us/requests/new).                                                           |
+| **Owner**         | Manages the organization and has full permissions at all levels.<br><br>This is not an assignable role, and there is only one Owner per organization. By default, the Owner is tied to the account that created the Annotation Hub organization. To change the Owner, you will need to [open a support ticket](https://support.humansignal.com/hc/en-us/requests/new).                                                           |
 | **Administrator** | Has full permissions at most levels.<br><br>Can modify workspaces, view activity logs, and approve invitations. However, Administrators cannot access the [billing](billing) page.                            |
 | **Manager**       | Has full administrative access over assigned workspaces and projects.<br><br>Managers cannot access the Organization page. They must be assigned to a workspace by an Owner or Administrator. But once assigned, they have full administrative access in the assigned workspaces. |
 | **Reviewer**      | Reviews annotated tasks.<br><br>Can only view projects that include tasks assigned to them. Can review and update task annotations.                                                                              |
 | **Annotator**     | Labels tasks.<br><br>Can only view projects with tasks assigned to them and label tasks in those projects.                                                                                               |
 
 
-## Permissions in Label Studio Enterprise
+## Permissions in Annotation Hub Enterprise
 
 <table>
   <tr>
@@ -193,7 +193,7 @@ For information on how to assign users to roles, see [Manage user accounts](admi
     <td colspan="6" style="text-align:center"><b>Advanced</b></td>
   </tr>
   <tr>
-    <td>API access to equivalent Label Studio functionality</td>
+    <td>API access to equivalent Annotation Hub functionality</td>
     <td style="text-align:center">✅</td>
     <td style="text-align:center">✅</td>
     <td style="text-align:center">✅[^1]</td>

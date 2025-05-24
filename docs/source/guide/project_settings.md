@@ -13,7 +13,7 @@ date: 2024-02-06 22:28:27
 ---
 
 !!! error Enterprise
-    There are many more possible controls and configurations available for Label Studio Enterprise users. For more information on those options, see [Project settings in Label Studio Enterprise](https://docs.humansignal.com/guide/project_settings_lse). 
+    There are many more possible controls and configurations available for Annotation Hub Enterprise users. For more information on those options, see [Project settings in Annotation Hub Enterprise](https://docs.humansignal.com/guide/project_settings_lse). 
 
 ## General
 
@@ -53,7 +53,7 @@ If disabled, users will need to click the **Show instructions** action at the bo
 
 <dd>
 
-If you have an ML backend or model connected, you can use this setting to determine whether tasks should be pre-labeled using predictions from the model. For more information, see [Integrate Label Studio into your machine learning pipeline](ml). 
+If you have an ML backend or model connected, you can use this setting to determine whether tasks should be pre-labeled using predictions from the model. For more information, see [Integrate Annotation Hub into your machine learning pipeline](ml). 
 
 Use the drop-down menu to select the predictions source. For example, you can select a [connected model](#Model) or a set of [predictions](#Predictions). 
 
@@ -79,25 +79,25 @@ And the following actions are available from the overflow menu next to a connect
 | ------------- | ------------ |
 | **Start Training**         | Manually initiate training. Use this action if you want to control when the model training occurs, such as after a specific number of annotations have been collected or at certain intervals.  |
 | **Send Test Request**         | (Available from the overflow menu next to the connected model)<br /><br />Use this for troubleshooting and sending a test resquest to the connected model.   |
-| **Edit**         | Edit the model name, URL, and parameters. For more information, see [Connect a model to Label Studio](ml#Connect-a-model-to-Label-Studio). |
+| **Edit**         | Edit the model name, URL, and parameters. For more information, see [Connect a model to Annotation Hub](ml#Connect-a-model-to-Label-Studio). |
 | **Delete**         | Remove the connection to the model. |
 
 ## Predictions
 
-From here you can view predictions that have been imported or generated when executing the **Retrieve Predictions** action from the Data Manager. For more information, see [Import pre-annotated data into Label Studio](predictions). 
+From here you can view predictions that have been imported or generated when executing the **Retrieve Predictions** action from the Data Manager. For more information, see [Import pre-annotated data into Annotation Hub](predictions). 
 
 ## Cloud storage
 
-This is where you connect Label Studio to a cloud storage provider:
+This is where you connect Annotation Hub to a cloud storage provider:
 
-* **Source Cloud Storage**--This is where the source data for your project is saved. When you sync your source storage, Label Studio retrieves data to be annotated. 
-* **Target Cloud Storage**--This is where your annotations are saved. When you sync your target storage, annotations are sent from Label Studio to the target storage location. 
+* **Source Cloud Storage**--This is where the source data for your project is saved. When you sync your source storage, Annotation Hub retrieves data to be annotated. 
+* **Target Cloud Storage**--This is where your annotations are saved. When you sync your target storage, annotations are sent from Annotation Hub to the target storage location. 
 
 For more information, see [Sync data from external storage](storage). 
 
 ## Webhooks
 
-You can use webhooks to integration third-party applications. For more information, see [Set up webhooks in Label Studio](webhooks) and our [integrations directory](https://labelstud.io/integrations/).
+You can use webhooks to integration third-party applications. For more information, see [Set up webhooks in Annotation Hub](webhooks) and our [integrations directory](https://labelstud.io/integrations/).
 
 ## Danger Zone
 
@@ -108,4 +108,4 @@ From here, you can access actions that result in data loss, and should be used w
     If the Data Manager is not loading, dropping all Data Manager tabs can help.
 * **Delete Project**
 
-    Deleting a project permanently removes all tasks, annotations, and project data from Label Studio.
+    Deleting a project permanently removes all tasks, annotations, and project data from Annotation Hub.

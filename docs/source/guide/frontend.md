@@ -6,15 +6,15 @@ order: 0
 order_enterprise: 0
 hide_menu: true
 meta_title: Customize User Interface
-meta_description: Label Studio documentation for integrating the Label Studio frontend interface into your own machine learning or data labeling application workflow.
+meta_description: Annotation Hub documentation for integrating the Annotation Hub frontend interface into your own machine learning or data labeling application workflow.
 section: "Integrate & Extend"
 
 ---
 
 !!! attention
-    As of [Label Studio 1.11.0](https://github.com/HumanSignal/label-studio/releases/tag/1.11.0), the Label Studio frontend has been deprecated as a separate library and is no longer supported as a standalone distribution. For information about using the frontend library within Label Studio, see [the README](https://github.com/HumanSignal/label-studio/blob/develop/web/libs/editor/README.md). 
+    As of [Annotation Hub 1.11.0](https://github.com/HumanSignal/label-studio/releases/tag/1.11.0), the Annotation Hub frontend has been deprecated as a separate library and is no longer supported as a standalone distribution. For information about using the frontend library within Annotation Hub, see [the README](https://github.com/HumanSignal/label-studio/blob/develop/web/libs/editor/README.md). 
 
-The [Label Studio Frontend](https://github.com/HumanSignal/label-studio-frontend) (LSF) is the main labeling interface distributed within Label Studio and as a separate package via NPM and Unpkg. You can integrate the LSF into your projects without Label Studio to provide data labeling capabilities to your users.
+The [Annotation Hub Frontend](https://github.com/HumanSignal/label-studio-frontend) (LSF) is the main labeling interface distributed within Annotation Hub and as a separate package via NPM and Unpkg. You can integrate the LSF into your projects without Annotation Hub to provide data labeling capabilities to your users.
 
 LSF can be customized and extended to fit your needs, and you can use a custom version of LSF standalone or in your LS installation. For more information see [Custom LSF + LS integration](#custom-lsf-in-label-studio).
 
@@ -23,7 +23,7 @@ LSF is located as a separate GitHub repository: https://github.com/HumanSignal/l
 <br>
 <img src="/images/frontend/lsf-in-ls.jpg" class="gif-border">
 
-<i>Figure 1: Label Studio Frontend </i>
+<i>Figure 1: Annotation Hub Frontend </i>
 
 
 ## Installation
@@ -46,10 +46,10 @@ yarn add heartexlabs@label-studio@latest
 
 ### Using Unpkg.com CDN
 ```xhtml
-<!-- Include Label Studio stylesheet -->
+<!-- Include Annotation Hub stylesheet -->
 <link href="https://unpkg.com/heartexlabs@label-studio@latest/build/static/css/main.css" rel="stylesheet">
 
-<!-- Include the Label Studio library -->
+<!-- Include the Annotation Hub library -->
 <script src="https://unpkg.com/heartexlabs@label-studio@latest/build/static/js/main.js"></script>
 ```
 
@@ -58,9 +58,9 @@ yarn add heartexlabs@label-studio@latest
 The LSF can be used with Vanilla JS or with the framework of your choice. The following examples cover basic integration with Vanilla and React.
 
 ### Vanilla JS integration
-You can use the Label Studio Frontend separately in your own projects by including it in your HTML page. Instantiate a new Label Studio object with a selector for the div that should become the editor.
+You can use the Annotation Hub Frontend separately in your own projects by including it in your HTML page. Instantiate a new Annotation Hub object with a selector for the div that should become the editor.
 
-To see all the available options for the initialization of LabelStudio object, see the [Label Studio Frontend](frontend_reference.html).
+To see all the available options for the initialization of LabelStudio object, see the [Annotation Hub Frontend](frontend_reference.html).
 
 {% collapse "Using modern JS techniques (recommended)" %}
 
@@ -71,7 +71,7 @@ In your HTML add the following code:
 <div id="label-studio"></div>
 ```
 
-Now to initialize the Label Studio Frontend, add the following code to your JS file:
+Now to initialize the Annotation Hub Frontend, add the following code to your JS file:
 ``` js
 import LabelStudio from 'heartexlabs@label-studio@latest';
 import 'heartexlabs@label-studio@latest/build/static/css/main.css';
@@ -112,7 +112,7 @@ const labelStudio = new LabelStudio('label-studio', {
 });
 
 labelStudio.on("labelStudioLoad", (LS) => {
-  // Perform an action when Label Studio is loaded
+  // Perform an action when Annotation Hub is loaded
   const c = LS.annotationStore.addAnnotation({
     userGenerate: true
   });
@@ -131,12 +131,12 @@ labelStudio.on("submitAnnotation", (LS, annotation) => {
 This technique is useful if you're not using a bundler or if you want to use the LSF in a static HTML page.
 
 ```xhtml
-<!-- Include Label Studio stylesheet -->
+<!-- Include Annotation Hub stylesheet -->
 <link href="https://unpkg.com/heartexlabs@label-studio@latest/build/static/css/main.css" rel="stylesheet">
 
 <div id="label-studio"></div>
 
-<!-- Include the Label Studio library -->
+<!-- Include the Annotation Hub library -->
 <script src="https://unpkg.com/heartexlabs@label-studio@latest/build/static/js/main.js"></script>
 
 <script>
@@ -239,7 +239,7 @@ render(<App />, document.getElementById('root'));
 
 ## Frontend development
 
-Refer to the [Frontend Reference](frontend_reference.html) when developing with Label Studio Frontend.
+Refer to the [Frontend Reference](frontend_reference.html) when developing with Annotation Hub Frontend.
 
 ### Manual builds
 
@@ -261,11 +261,11 @@ yarn download:lsf <branch-name-from-official-lsf-repo>
 
 <div class="opensource-only">
 
-## Custom LSF in Label Studio
+## Custom LSF in Annotation Hub
 
-LS Frontend (LSF) with Backend (LSB) integration is similar what is described in the [Frontend integration guide](#Frontend-integration-guide). The JavaScript integration script is placed in [lsf-sdk.js](https://github.com/HumanSignal/label-studio/blob/develop/label_studio/static/js/lsf-sdk.js) in the Label Studio Backend. The main idea of this integration based on LSF callbacks.
+LS Frontend (LSF) with Backend (LSB) integration is similar what is described in the [Frontend integration guide](#Frontend-integration-guide). The JavaScript integration script is placed in [lsf-sdk.js](https://github.com/HumanSignal/label-studio/blob/develop/label_studio/static/js/lsf-sdk.js) in the Annotation Hub Backend. The main idea of this integration based on LSF callbacks.
 
-Check out a quick guide on how to use custom LSF in Label Studio.
+Check out a quick guide on how to use custom LSF in Annotation Hub.
 
 <iframe width="800" height="500" src="https://www.youtube.com/embed/QSGgiXie2SE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -274,13 +274,13 @@ Check out a quick guide on how to use custom LSF in Label Studio.
 2. Finalize your development with `npm run build:module` to generate `main.css` and `main.js` files.
 3. Confirm files appearance in the `build/static` folder.
 
-### Integrate LSF into Label Studio
+### Integrate LSF into Annotation Hub
 All frontend-related files are stored under `label-studio/frontend` directory. You will also find `dist/` folder there that contains the latest builds of the external frontend libraries.
 
 Under `dist/` folder locate the `lsf/` folder and replace its contents with your custom LSF build.
 
 !!! note
-    Inside every folder under `dist/` you will find a `version.json` file. Do not modify or remove it. Its presence is required for the Label Studio to operate.
+    Inside every folder under `dist/` you will find a `version.json` file. Do not modify or remove it. Its presence is required for the Annotation Hub to operate.
 
 1. **Do not forget** to remove the old build from LSB:
     ```bash

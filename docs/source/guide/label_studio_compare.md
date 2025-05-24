@@ -1,16 +1,16 @@
 ---
-title: Compare Label Studio Editions
+title: Compare Annotation Hub Editions
 short: Compare editions
 type: guide
 tier: all
 order: 28
 order_enterprise: 28
 section: "Discover & Learn"
-meta_title: Label Studio Community and Enterprise Features
-meta_description: Compare the features of Label Studio Community Edition with the paid versions so that you can choose the best option for your data labeling and annotation projects.
+meta_title: Annotation Hub Community and Enterprise Features
+meta_description: Compare the features of Annotation Hub Community Edition with the paid versions so that you can choose the best option for your data labeling and annotation projects.
 ---
 
-Label Studio is available to everyone as open source software (Label Studio Community Edition). There are also two paid editions: Starter Cloud and Enterprise. 
+Annotation Hub is available to everyone as open source software (Annotation Hub Community Edition). There are also two paid editions: Starter Cloud and Enterprise. 
 
 <a class="Button" href="#Feature-comparison" target="_blank" style="margin-bottom: 2em;">See full feature comparison</a>
 
@@ -69,7 +69,7 @@ Label Studio is available to everyone as open source software (Label Studio Comm
     <td style="text-align:center">✅</td>
   </tr>
   <tr>
-    <td><b>Import pre-annotated data</b><br/><a href="predictions.html">Import pre-annotated data (predictions) into Label Studio for further refinement and assessment.</a></td>
+    <td><b>Import pre-annotated data</b><br/><a href="predictions.html">Import pre-annotated data (predictions) into Annotation Hub for further refinement and assessment.</a></td>
     <td style="text-align:center">✅</td>
     <td style="text-align:center">✅</td>
     <td style="text-align:center">✅</td>
@@ -187,7 +187,7 @@ Label Studio is available to everyone as open source software (Label Studio Comm
     <td style="text-align:center">✅</td>
   </tr>
   <tr>
-    <td><b>API/SDK & webhooks</b><br/><a href = "https://labelstud.io/guide/api.html"> APIs, SDK, and webhooks for programmatically accessing and managing Label Studio.</a></td>
+    <td><b>API/SDK & webhooks</b><br/><a href = "https://labelstud.io/guide/api.html"> APIs, SDK, and webhooks for programmatically accessing and managing Annotation Hub.</a></td>
     <td style="text-align:center">✅</td>
     <td style="text-align:center">✅</td>
     <td style="text-align:center">✅</td>

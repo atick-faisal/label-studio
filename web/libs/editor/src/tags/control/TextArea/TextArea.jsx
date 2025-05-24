@@ -58,7 +58,7 @@ const { TextArea } = Input;
  * </View>
  * @name TextArea
  * @meta_title Textarea Tag for Text areas
- * @meta_description Customize Label Studio with the TextArea tag to support audio transcription, image captioning, and OCR tasks for machine learning and data science projects.
+ * @meta_description Customize Annotation Hub with the TextArea tag to support audio transcription, image captioning, and OCR tasks for machine learning and data science projects.
  * @param {string} name                    - Name of the element
  * @param {string} toName                  - Name of the element that you want to label
  * @param {string} value                   - Pre-filled value

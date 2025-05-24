@@ -5,7 +5,7 @@ hide_menu: true
 tier: all
 order: 30
 meta_title: Computer Vision PyTorch Tutorial
-meta_description: Label Studio tutorial for computer vision that showcases transfer learning for images using PyTorch and Label Studio.
+meta_description: Annotation Hub tutorial for computer vision that showcases transfer learning for images using PyTorch and Annotation Hub.
 section: "Machine learning"
 parent: "ml_tutorials"
 parent_enterprise: "ml_tutorials"
@@ -13,7 +13,7 @@ parent_page_extension: "html"
 ---
 
 
-This example explains the basics of computer vision with Label Studio and [PyTorch](https://pytorch.org/).
+This example explains the basics of computer vision with Annotation Hub and [PyTorch](https://pytorch.org/).
 The proposed model uses transfer learning from the popular ResNet image classifier and can be fine-tuned to your own data.
 
 You can use this example labeling configuration:
@@ -30,11 +30,11 @@ You can use this example labeling configuration:
 
 ### Create a model script
 
-If you create an ML backend using [Label Studio's ML SDK](/guide/ml_create.html), make sure your ML backend script does the following:
+If you create an ML backend using [Annotation Hub's ML SDK](/guide/ml_create.html), make sure your ML backend script does the following:
 
 - Inherit the created model class from `label_studio_ml.LabelStudioMLBase`
 - Override the 2 methods:
-    - `predict()`, which takes [input tasks](/guide/tasks.html#Basic-Label-Studio-JSON-format) and outputs [predictions](/guide/predictions.html) in the Label Studio JSON format.
+    - `predict()`, which takes [input tasks](/guide/tasks.html#Basic-Label-Studio-JSON-format) and outputs [predictions](/guide/predictions.html) in the Annotation Hub JSON format.
     - `fit()`, which receives [annotations](/guide/export.html#Label-Studio-JSON-format-of-annotated-tasks) iterable and returns a dictionary with created links and resources. This dictionary is used later to load models with the `self.train_output` field.
 
 Create a file `model.py` with the PyTorch model ready for training and inference.
@@ -175,7 +175,7 @@ class ImageClassifierAPI(LabelStudioMLBase):
 
 ### Create ML backend configs & scripts
 
-Label Studio can automatically create all necessary configs and scripts needed to run ML backend from your newly created model.
+Annotation Hub can automatically create all necessary configs and scripts needed to run ML backend from your newly created model.
 
 Call your ML backend `my_backend` and from the command line, initialize the ML backend directory `./my_backend`:
 
@@ -216,9 +216,9 @@ docker-compose up
 
 You can explore runtime logs in `my_backend/logs/uwsgi.log` and RQ training logs in `my_backend/logs/rq.log`
 
-### Using ML backend with Label Studio
+### Using ML backend with Annotation Hub
 
-Initialize and start a new Label Studio project connecting to the running ML backend:
+Initialize and start a new Annotation Hub project connecting to the running ML backend:
 
 ```bash
 label-studio start my_project --init --ml-backends http://localhost:9090
@@ -226,7 +226,7 @@ label-studio start my_project --init --ml-backends http://localhost:9090
 
 #### Getting predictions
 
-You should see model predictions in a labeling interface. See [Set up machine learning with Label Studio](/guide/ml.html).
+You should see model predictions in a labeling interface. See [Set up machine learning with Annotation Hub](/guide/ml.html).
 
 #### Model training
 

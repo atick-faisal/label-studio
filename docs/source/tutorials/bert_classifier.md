@@ -6,7 +6,7 @@ order: 35
 hide_menu: true
 hide_frontmatter_title: true
 meta_title: BERT-based text classification
-meta_description: Tutorial on how to use BERT-based text classification with your Label Studio project
+meta_description: Tutorial on how to use BERT-based text classification with your Annotation Hub project
 categories:
     - Natural Language Processing
     - Text Classification
@@ -17,17 +17,17 @@ image: "/tutorials/bert.png"
 
 # BERT-based text classification
 
-The NewModel is a BERT-based text classification model that is designed to work with Label Studio. This model uses the Hugging Face Transformers library to fine-tune a BERT model for text classification. The model is trained on the labeled data from Label Studio and then used to make predictions on new data.  With this model connected to Label Studio, you can: 
+The NewModel is a BERT-based text classification model that is designed to work with Annotation Hub. This model uses the Hugging Face Transformers library to fine-tune a BERT model for text classification. The model is trained on the labeled data from Annotation Hub and then used to make predictions on new data.  With this model connected to Annotation Hub, you can: 
 
-- Train a BERT model on your labeled data directly from Label Studio.
+- Train a BERT model on your labeled data directly from Annotation Hub.
 - Use any model for [AutoModelForSequenceClassification](https://huggingface.co/transformers/v3.0.2/model_doc/auto.html#automodelforsequenceclassification) from the Hugging Face model hub.
 - Fine-tune the model on your specific task and use it to make predictions on new data.
-- Automatically download the labeled tasks from Label Studio and prepare the data for training.
+- Automatically download the labeled tasks from Annotation Hub and prepare the data for training.
 - Customize the training parameters such as learning rate, number of epochs, and weight decay.
 
 ## Before you begin
 
-Before you begin, you must install the [Label Studio ML backend](https://github.com/HumanSignal/label-studio-ml-backend?tab=readme-ov-file#quickstart). 
+Before you begin, you must install the [Annotation Hub ML backend](https://github.com/HumanSignal/label-studio-ml-backend?tab=readme-ov-file#quickstart). 
 
 This tutorial uses the [`bert_classifier` example](https://github.com/HumanSignal/label-studio-ml-backend/tree/master/label_studio_ml/examples/bert_classifier). 
 
@@ -47,9 +47,9 @@ $ curl http://localhost:9090/
 {"status":"UP"}
 ```
 
-3. Create a project in Label Studio. Then from the **Model** page in the project settings, [connect the model](https://labelstud.io/guide/ml#Connect-the-model-to-Label-Studio). The default URL is `http://localhost:9090`.
+3. Create a project in Annotation Hub. Then from the **Model** page in the project settings, [connect the model](https://labelstud.io/guide/ml#Connect-the-model-to-Label-Studio). The default URL is `http://localhost:9090`.
 
-> Warning! Note the current limitation of the ML backend: models are loaded dynamically from huggingface.co. You may need the `HF_TOKEN` env variable provided in your environment. Consequently, this may result in a slow response time for the first prediction request. If you are experiencing timeouts on Label Studio side (i.e., no predictions are visible when opening the task), check the logs of the ML backend for any errors, and refresh the page in a few minutes.
+> Warning! Note the current limitation of the ML backend: models are loaded dynamically from huggingface.co. You may need the `HF_TOKEN` env variable provided in your environment. Consequently, this may result in a slow response time for the first prediction request. If you are experiencing timeouts on Annotation Hub side (i.e., no predictions are visible when opening the task), check the logs of the ML backend for any errors, and refresh the page in a few minutes.
 
 ## Building from source (advanced)
 
@@ -78,7 +78,7 @@ label-studio-ml start ./dir_with_your_model
 
 ## Labeling configuration
 
-In project `Settings > Labeling Interface > Browse Templates > Natural Language Processing > Text Classification`, you can find the default labeling configuration for text classification in Label Studio. This configuration includes a single `<Choices>` output and a single `<Text>` input. 
+In project `Settings > Labeling Interface > Browse Templates > Natural Language Processing > Text Classification`, you can find the default labeling configuration for text classification in Annotation Hub. This configuration includes a single `<Choices>` output and a single `<Text>` input. 
 Feel free to modify the set of labels in the `<Choices>` tag to match your specific task, for example:
 
 ```xml
@@ -110,15 +110,15 @@ The following common parameters are available:
 
 The following parameters are available for training:
 
-- `LABEL_STUDIO_HOST` (required): The URL of the Label Studio instance. Default is `http://localhost:8080`.
-- `LABEL_STUDIO_API_KEY` (required): The [API key](https://labelstud.io/guide/user_account#Access-token) for the Label Studio instance.
-- `START_TRAINING_EACH_N_UPDATES`: The number of labeled tasks to download from Label Studio before starting training. Default is 10.
+- `LABEL_STUDIO_HOST` (required): The URL of the Annotation Hub instance. Default is `http://localhost:8080`.
+- `LABEL_STUDIO_API_KEY` (required): The [API key](https://labelstud.io/guide/user_account#Access-token) for the Annotation Hub instance.
+- `START_TRAINING_EACH_N_UPDATES`: The number of labeled tasks to download from Annotation Hub before starting training. Default is 10.
 - `LEARNING_RATE`: The learning rate for the model training. Default is 2e-5.
 - `NUM_TRAIN_EPOCHS`: The number of epochs for model training. Default is 3.
 - `WEIGHT_DECAY`: The weight decay for the model training. Default is 0.01.
 - `FINETUNED_MODEL_NAME`: The name of the fine-tuned model. Default is `finetuned_model`. Checkpoints will be saved under this name.
 
-> Note: The `LABEL_STUDIO_API_KEY` is required for training the model. You can find the API key in Label Studio under the [**Account & Settings** page](https://labelstud.io/guide/user_account#Access-token).
+> Note: The `LABEL_STUDIO_API_KEY` is required for training the model. You can find the API key in Annotation Hub under the [**Account & Settings** page](https://labelstud.io/guide/user_account#Access-token).
 
 
 # Customization

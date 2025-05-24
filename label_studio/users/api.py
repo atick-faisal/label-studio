@@ -45,7 +45,7 @@ _user_schema = openapi.Schema(
         x_fern_audiences=['internal'],
         operation_summary='Save user details',
         operation_description="""
-    Save details for a specific user, such as their name or contact information, in Label Studio.
+    Save details for a specific user, such as their name or contact information, in Annotation Hub.
     """,
         manual_parameters=[
             openapi.Parameter(name='id', type=openapi.TYPE_INTEGER, in_=openapi.IN_PATH, description='User ID'),
@@ -61,7 +61,7 @@ _user_schema = openapi.Schema(
         x_fern_sdk_method_name='list',
         x_fern_audiences=['public'],
         operation_summary='List users',
-        operation_description='List the users that exist on the Label Studio server.',
+        operation_description='List the users that exist on the Annotation Hub server.',
     ),
 )
 @method_decorator(
@@ -72,7 +72,7 @@ _user_schema = openapi.Schema(
         x_fern_sdk_method_name='create',
         x_fern_audiences=['public'],
         operation_summary='Create new user',
-        operation_description='Create a user in Label Studio.',
+        operation_description='Create a user in Annotation Hub.',
         request_body=_user_schema,
         responses={201: UserSerializer},
     ),
@@ -85,7 +85,7 @@ _user_schema = openapi.Schema(
         x_fern_sdk_method_name='get',
         x_fern_audiences=['public'],
         operation_summary='Get user info',
-        operation_description='Get info about a specific Label Studio user, based on the user ID.',
+        operation_description='Get info about a specific Annotation Hub user, based on the user ID.',
         manual_parameters=[
             openapi.Parameter(name='id', type=openapi.TYPE_INTEGER, in_=openapi.IN_PATH, description='User ID'),
         ],
@@ -102,7 +102,7 @@ _user_schema = openapi.Schema(
         x_fern_audiences=['public'],
         operation_summary='Update user details',
         operation_description="""
-        Update details for a specific user, such as their name or contact information, in Label Studio.
+        Update details for a specific user, such as their name or contact information, in Annotation Hub.
         """,
         manual_parameters=[
             openapi.Parameter(name='id', type=openapi.TYPE_INTEGER, in_=openapi.IN_PATH, description='User ID'),
@@ -119,7 +119,7 @@ _user_schema = openapi.Schema(
         x_fern_sdk_method_name='delete',
         x_fern_audiences=['public'],
         operation_summary='Delete user',
-        operation_description='Delete a specific Label Studio user.',
+        operation_description='Delete a specific Annotation Hub user.',
         manual_parameters=[
             openapi.Parameter(name='id', type=openapi.TYPE_INTEGER, in_=openapi.IN_PATH, description='User ID'),
         ],

@@ -114,7 +114,7 @@ stages:
     json:
       - title: JSON
         description: List of items in raw JSON format stored in one JSON file. Use to export
-          both the data and the annotations for a dataset. It's Label Studio Common Format
+          both the data and the annotations for a dataset. It's Annotation Hub Common Format
         link: https://labelstud.io/guide/export.html#JSON
         name: JSON
       - title: JSON-MIN

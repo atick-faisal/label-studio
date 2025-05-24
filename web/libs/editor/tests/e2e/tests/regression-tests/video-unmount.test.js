@@ -1,6 +1,6 @@
 Feature("Video unmount").tag("@regress");
 
-Scenario("Reiniting Label Studio should not left unexpected null and video tags in DOM", async ({ I, LabelStudio }) => {
+Scenario("Reiniting Annotation Hub should not left unexpected null and video tags in DOM", async ({ I, LabelStudio }) => {
   I.amOnPage("/");
   for (let i = 0; i < 60; i++) {
     LabelStudio.init({

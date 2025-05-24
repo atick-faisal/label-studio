@@ -6,7 +6,7 @@ order: 5
 hide_menu: true
 hide_frontmatter_title: true
 meta_title: Interactive LLM labeling with OpenAI, Azure, or Ollama
-meta_description: Label Studio tutorial for interactive LLM labeling with OpenAI, Azure, or Ollama
+meta_description: Annotation Hub tutorial for interactive LLM labeling with OpenAI, Azure, or Ollama
 categories:
     - Generative AI
     - Large Language Model
@@ -19,7 +19,7 @@ image: "/tutorials/llm-interactive.png"
 
 # Interactive LLM labeling
 
-This example server connects Label Studio to [OpenAI](https://platform.openai.com/), [Ollama](https://ollama.com/),
+This example server connects Annotation Hub to [OpenAI](https://platform.openai.com/), [Ollama](https://ollama.com/),
 or [Azure](https://azure.microsoft.com/en-us/products/ai-services/openai-service) API to interact with GPT chat models (
 gpt-3.5-turbo, gpt-4, etc.).
 
@@ -35,7 +35,7 @@ Check the [Generative AI templates](https://labelstud.io/templates/gallery_gener
 
 ## Before you begin
 
-Before you begin, you must install the [Label Studio ML backend](https://github.com/HumanSignal/label-studio-ml-backend?tab=readme-ov-file#quickstart). 
+Before you begin, you must install the [Annotation Hub ML backend](https://github.com/HumanSignal/label-studio-ml-backend?tab=readme-ov-file#quickstart). 
 
 This tutorial uses the [`llm_interactive` example](https://github.com/HumanSignal/label-studio-ml-backend/tree/master/label_studio_ml/examples/llm_interactive). 
 
@@ -52,7 +52,7 @@ $ curl http://localhost:9090/health
 {"status":"UP"}
 ```
 
-3. Open a Label Studio project and go to **Settings > Model**. [Connect the model](https://labelstud.io/guide/ml#Connect-the-model-to-Label-Studio), specifying `http://localhost:9090` as the URL. 
+3. Open a Annotation Hub project and go to **Settings > Model**. [Connect the model](https://labelstud.io/guide/ml#Connect-the-model-to-Label-Studio), specifying `http://localhost:9090` as the URL. 
    
    Ensure the **Interactive preannotations** toggle is enabled and click **Validate and Save**.
 4. The project config should be compatible with the ML backend. This ML backend can support various input data formats
@@ -71,7 +71,7 @@ $ curl http://localhost:9090/health
 5. Open a task and ensure the **Auto-Annotation** toggle is enabled (it is located at the bottom of the labeling interface).
 6. Enter a prompt in the prompt input field and press `Shift+Enter`. The LLM response will be generated and displayed in
    the response field.
-7. If you want to apply LLM auto-annotation to multiple tasks at once, go to the [Data Manager](https://labelstud.io/guide/manage_data), select a group of tasks and then select **Actions > Retrieve Predictions** (or **Batch Predictions** in Label Studio Enterprise).
+7. If you want to apply LLM auto-annotation to multiple tasks at once, go to the [Data Manager](https://labelstud.io/guide/manage_data), select a group of tasks and then select **Actions > Retrieve Predictions** (or **Batch Predictions** in Annotation Hub Enterprise).
 
 ## Configuration examples
 

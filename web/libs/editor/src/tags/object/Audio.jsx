@@ -37,7 +37,7 @@ import { customTypes } from "../../core/CustomTypes";
  * </View>
  * @regions AudioRegion
  * @meta_title Audio Tag for Labeling Audio
- * @meta_description Customize Label Studio to label audio data for machine learning and data science projects.
+ * @meta_description Customize Annotation Hub to label audio data for machine learning and data science projects.
  * @param {string} name Name of the element
  * @param {string} value Data field containing path or a URL to the audio
  * @param {string} hotkey Hotkey used to play or pause audio

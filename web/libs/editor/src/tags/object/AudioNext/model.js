@@ -26,7 +26,7 @@ import { WS_SPEED, WS_VOLUME, WS_ZOOM_X } from "./constants";
  *   <Audio name="audio-1" value="$audio" />
  * </View>
  * @meta_title Audio Tag for Audio Labeling
- * @meta_description Customize Label Studio with the Audio tag for advanced audio annotation tasks for machine learning and data science projects.
+ * @meta_description Customize Annotation Hub with the Audio tag for advanced audio annotation tasks for machine learning and data science projects.
  * @param {string} name - Name of the element
  * @param {string} value - Data field containing path or a URL to the audio
  * @param {boolean=} [volume=false] - Whether to show a volume slider (from 0 to 1)

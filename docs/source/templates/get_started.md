@@ -1,12 +1,12 @@
 ---
-title: Get Started with Label Studio Templates
+title: Get Started with Annotation Hub Templates
 type: templates
 order: 50
-meta_title: Get started with templates in Label Studio
-meta_description: Label Studio Template library of data labeling and annotation configurations for various data types.
+meta_title: Get started with templates in Annotation Hub
+meta_description: Annotation Hub Template library of data labeling and annotation configurations for various data types.
 ---
 
-Label Studio templates provide you with a way to get started quickly with your data labeling process or machine learning workflow.
+Annotation Hub templates provide you with a way to get started quickly with your data labeling process or machine learning workflow.
 
 The templates are predefined labeling interfaces for specific use cases and data types. Use our templates to get started labeling right away, or as a starting point to build a fully customized labeling interface for your data labeling project.
 

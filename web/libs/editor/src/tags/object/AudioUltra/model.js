@@ -75,7 +75,7 @@ import { WS_SPEED, WS_VOLUME, WS_ZOOM_X } from "./constants";
  * </View>
  * @regions AudioRegion
  * @meta_title Audio Tag for Audio Labeling
- * @meta_description Customize Label Studio with the Audio tag for advanced audio annotation tasks for machine learning and data science projects.
+ * @meta_description Customize Annotation Hub with the Audio tag for advanced audio annotation tasks for machine learning and data science projects.
  * @name Audio
  * @param {string} name - Name of the element
  * @param {string} value - Data field containing path or a URL to the audio.

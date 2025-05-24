@@ -59,7 +59,7 @@ logger = logging.getLogger(__name__)
         x_fern_sdk_method_name='create',
         x_fern_audiences=['public'],
         operation_summary='Create task',
-        operation_description='Create a new labeling task in Label Studio.',
+        operation_description='Create a new labeling task in Annotation Hub.',
         request_body=task_request_schema,
         responses={
             '201': openapi.Response(
@@ -243,7 +243,7 @@ class TaskListAPI(DMTaskListAPI):
         x_fern_sdk_method_name='delete',
         x_fern_audiences=['public'],
         operation_summary='Delete task',
-        operation_description='Delete a task in Label Studio. This action cannot be undone!',
+        operation_description='Delete a task in Annotation Hub. This action cannot be undone!',
         manual_parameters=[
             openapi.Parameter(name='id', type=openapi.TYPE_STRING, in_=openapi.IN_PATH, description='Task ID'),
         ],

@@ -5,8 +5,8 @@ tier: all
 order: 15
 hide_menu: true
 hide_frontmatter_title: true
-meta_title: Image segmentation in Label Studio using a Grounding DINO backend
-meta_description: Label Studio tutorial for using Grounding DINO for zero-shot object detection in images
+meta_title: Image segmentation in Annotation Hub using a Grounding DINO backend
+meta_description: Annotation Hub tutorial for using Grounding DINO for zero-shot object detection in images
 categories:
     - Computer Vision
     - Image Annotation
@@ -29,7 +29,7 @@ See [here](https://github.com/IDEA-Research/GroundingDINO) for more details abou
 
 ## Before you begin
 
-Before you begin, you must install the [Label Studio ML backend](https://github.com/HumanSignal/label-studio-ml-backend?tab=readme-ov-file#quickstart). 
+Before you begin, you must install the [Annotation Hub ML backend](https://github.com/HumanSignal/label-studio-ml-backend?tab=readme-ov-file#quickstart). 
 
 This tutorial uses the [`grounding_dino` example](https://github.com/HumanSignal/label-studio-ml-backend/tree/master/label_studio_ml/examples/grounding_dino). 
 
@@ -38,16 +38,16 @@ This tutorial uses the [`grounding_dino` example](https://github.com/HumanSignal
 
 1. Make sure Docker is installed.
 2. Edit `docker-compose.yml` to include the following:
-   * `LABEL_STUDIO_HOST` sets the endpoint of the Label Studio host. Must begin with `http://` 
-   * `LABEL_STUDIO_ACCESS_TOKEN` sets the API access token for the Label Studio host. This can be found by logging
-  into Label Studio and [going to the **Account & Settings** page](https://labelstud.io/guide/user_account#Access-token). 
+   * `LABEL_STUDIO_HOST` sets the endpoint of the Annotation Hub host. Must begin with `http://` 
+   * `LABEL_STUDIO_ACCESS_TOKEN` sets the API access token for the Annotation Hub host. This can be found by logging
+  into Annotation Hub and [going to the **Account & Settings** page](https://labelstud.io/guide/user_account#Access-token). 
 
     Example:
    - `LABEL_STUDIO_HOST=http://123.456.7.8:8080`
    - `LABEL_STUDIO_ACCESS_TOKEN=your-api-key`
 
 3. Run `docker compose up`
-4. Check the IP of your backend using `docker ps`. You will use this URL when connecting the backend to a Label Studio project. Usually this is `http://localhost:9090`.
+4. Check the IP of your backend using `docker ps`. You will use this URL when connecting the backend to a Annotation Hub project. Usually this is `http://localhost:9090`.
 
 5. Create a project and edit the labeling config (an example is provided below). When editing the labeling config, make sure to add all rectangle labels under the `RectangleLabels` tag, and all corresponding brush labels under the `BrushLabels` tag.
 

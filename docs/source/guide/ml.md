@@ -1,11 +1,11 @@
 ---
-title: Integrate Label Studio into your machine learning pipeline
+title: Integrate Annotation Hub into your machine learning pipeline
 short: Machine learning integration
 type: guide
 tier: all
 order: 251
 order_enterprise: 251
-meta_title: Integrate Label Studio into your machine learning pipeline
+meta_title: Integrate Annotation Hub into your machine learning pipeline
 meta_description: Machine learning frameworks for integrating your model development pipeline seamlessly with your data labeling workflow.
 section: "Machine Learning"
 ---
@@ -19,7 +19,7 @@ You can use an ML backend to integrate your model development pipeline with your
 <div class="opensource-only">
 
 !!! error enterprise
-    Label Studio Enterprise features an out-of-the-box solution for LLM-assisted auto-labeling and model evaluation. Compare LLMs based on accuracy and cost. For more information, see [Prompts](https://docs.humansignal.com/guide/prompts_overview).
+    Annotation Hub Enterprise features an out-of-the-box solution for LLM-assisted auto-labeling and model evaluation. Compare LLMs based on accuracy and cost. For more information, see [Prompts](https://docs.humansignal.com/guide/prompts_overview).
 
 </div>
 
@@ -35,19 +35,19 @@ For example, for an image classification task, the model pre-selects an image cl
 Once a model is connected, the way it works is:
 
 1. A user opens the task. 
-2. Label Studio sends the request to ML backend. 
+2. Annotation Hub sends the request to ML backend. 
 3. The ML backend responds with its prediction. 
-4. The prediction is loaded into the Label Studio UI and shown to the annotator. 
+4. The prediction is loaded into the Annotation Hub UI and shown to the annotator. 
 
-If you just need to load static pre-annotated data into Label Studio, running an ML backend might be overkill for you. Instead, you can [import preannotated data](predictions).
+If you just need to load static pre-annotated data into Annotation Hub, running an ML backend might be overkill for you. Instead, you can [import preannotated data](predictions).
 
 
 !!! info Tip
-    You can use [Label Studio Enterprise to build an automated active learning loop](https://docs.humansignal.com/guide/active_learning.html) with a machine learning model backend. If you use the open source Community Edition of Label Studio, you can manually sort tasks and retrieve predictions to mimic an active learning process.
+    You can use [Annotation Hub Enterprise to build an automated active learning loop](https://docs.humansignal.com/guide/active_learning.html) with a machine learning model backend. If you use the open source Community Edition of Annotation Hub, you can manually sort tasks and retrieve predictions to mimic an active learning process.
 
 ## Set up an example ML backend
 
-The Label Studio ML backend is an SDK that wraps your machine learning code and turns it into a web server. The web server can be connected to a running Label Studio instance to automate labeling tasks. We have provided a [library of example models](https://github.com/HumanSignal/label-studio-ml-backend?tab=readme-ov-file#models) that you can use in your own workflow, or extend and customize as needed. 
+The Annotation Hub ML backend is an SDK that wraps your machine learning code and turns it into a web server. The web server can be connected to a running Annotation Hub instance to automate labeling tasks. We have provided a [library of example models](https://github.com/HumanSignal/label-studio-ml-backend?tab=readme-ov-file#models) that you can use in your own workflow, or extend and customize as needed. 
 
 Ir you want to write your own model instead, see [Write your own ML backend](ml_create).
 
@@ -55,14 +55,14 @@ Ir you want to write your own model instead, see [Write your own ML backend](ml_
 
 <div class="opensource-only">
 
-* [Label Studio](install)
+* [Annotation Hub](install)
 * [Docker Compose](https://docs.docker.com/compose/install/)
 
 </div>
 
 <div class="enterprise-only">
 
-* [Label Studio](install_enterprise)
+* [Annotation Hub](install_enterprise)
 * [Docker Compose](https://docs.docker.com/compose/install/)
 
 </div>
@@ -106,9 +106,9 @@ If you see any errors, see [Troubleshooting ML Backends & Predictions](https://s
 
 `localhost` is a special domain name that loops back directly to your local environment. 
 
-If you are running Label Studio in a Docker container, `localhost` loops back to the container itself, and not the machine that the container is hosted on. Docker provides a special domain as a workaround for this, docker.host.internal. If you're hosting Label Studio and your ML Backend inside of Docker, try using that domain instead of localhost (`http://host.docker.internal:9090`) or the internal IP address. 
+If you are running Annotation Hub in a Docker container, `localhost` loops back to the container itself, and not the machine that the container is hosted on. Docker provides a special domain as a workaround for this, docker.host.internal. If you're hosting Annotation Hub and your ML Backend inside of Docker, try using that domain instead of localhost (`http://host.docker.internal:9090`) or the internal IP address. 
 
-### Connect the model to Label Studio
+### Connect the model to Annotation Hub
 
 <div class="enterprise-only">
 
@@ -127,7 +127,7 @@ Click **Connect Model** and complete the following fields:
 | Field | Description                                                                            |
 | -------- | -------------------------------------------------------------------------------------- |
 | **Name**   | Enter a name for the model.                        |
-| **Backend URL**  | Enter a URL for the model. <br /><br />If you are following the steps above, this would be `http://localhost:9090`. If you are running Label Studio in a Docker container, [see the note above](#localhost-and-Docker-containers). |
+| **Backend URL**  | Enter a URL for the model. <br /><br />If you are following the steps above, this would be `http://localhost:9090`. If you are running Annotation Hub in a Docker container, [see the note above](#localhost-and-Docker-containers). |
 | **Select authentication method**   | If a username and password are required to access the model, you can select **Basic Authentication** and enter them here.                                     |
 | **Extra params**  | Enter any additional parameters you want to pass to the model.                                      |
 | **Interactive preannotations**  | Enable this option to allow the model to assist with the labeling process by providing real-time predictions or suggestions as annotators work on tasks.  <br /><br />In other words, as you interact with data (for example, by drawing a region on an image, highlighting text, or asking an LLM a question), the ML backend receives this input and returns predictions based on it. For more information, see [Interactive pre-annotations](#Interactive-pre-annotations) below. |
@@ -141,11 +141,11 @@ The [ML backend repo](https://github.com/HumanSignal/label-studio-ml-backend) in
 
 Some of them work without any additional configuration. Check the **Required parameters** column to see if you need to set any additional parameters. If the model has required parameters, you can set those parameters in `docker-compose.yml` within the model directory. 
 
-- **Pre-annotation** column indicates if the model can be used for pre-annotation in Label Studio:  
+- **Pre-annotation** column indicates if the model can be used for pre-annotation in Annotation Hub:  
   you can see pre-annotated data when opening the labeling page or after running predictions for a batch of data.
-- **Interactive mode** column indicates if the model can be used for interactive labeling in Label Studio: see
+- **Interactive mode** column indicates if the model can be used for interactive labeling in Annotation Hub: see
   interactive predictions when performing actions on labeling page.
-- **Training** column indicates if the model can be used for training in Label Studio: update the model state based the
+- **Training** column indicates if the model can be used for training in Annotation Hub: update the model state based the
   submitted annotations.
 
 | MODEL_NAME                                                                                 | Description                                                                                                                               | Pre-annotation | Interactive mode | Training | Required parameters                           |
@@ -166,16 +166,16 @@ Some of them work without any additional configuration. Check the **Required par
 | [interactive_substring_matching](https://github.com/HumanSignal/label-studio-ml-backend/tree/master/label_studio_ml/examples/interactive_substring_matching) | Simple keywords search                                                                                                                    | ❌               | ✅                | ❌        | None                                          |
 | [langchain_search_agent](https://github.com/HumanSignal/label-studio-ml-backend/tree/master/label_studio_ml/examples/langchain_search_agent)                 | RAG pipeline with Google Search and [Langchain](https://langchain.com/)                                                                   | ✅               | ✅                | ✅        | OPENAI_API_KEY, GOOGLE_CSE_ID, GOOGLE_API_KEY |
 
-## Allow the ML backend to access Label Studio data
+## Allow the ML backend to access Annotation Hub data
 
-In most cases, you will need to set your environment variables to allow the ML backend access to the data in Label Studio. 
+In most cases, you will need to set your environment variables to allow the ML backend access to the data in Annotation Hub. 
 
-Label Studio tasks can have multiple sources of resource files:
+Annotation Hub tasks can have multiple sources of resource files:
 
 * Direct `http` and `https` links.  
     Example: `task['data'] = {"image": "http://example.com/photo_1.jpg"}`
 
-* Files that have been uploaded to Label Studio using the **Import** action.  
+* Files that have been uploaded to Annotation Hub using the **Import** action.  
     Example: `task['data'] = {"image": "https://ls-instance/data/upload/42/photo_1.jpg"}`
 
 * Files added through a [local storage connection](storage#Local-storage).  
@@ -184,7 +184,7 @@ Label Studio tasks can have multiple sources of resource files:
 * Files added through a [cloud storage](storage) (S3, GCS, Azure) connection.  
     Example: `task['data'] = {"image": "s3://bucket/prefix/photo_1.jpg"}`
 
-When Label Studio invokes the `predict(tasks)` method on an ML backend, it sends tasks containing data sub-dictionaries with links to resource files. 
+When Annotation Hub invokes the `predict(tasks)` method on an ML backend, it sends tasks containing data sub-dictionaries with links to resource files. 
 
 Downloading files from direct `http` and `https` links (the first example above) is straightforward. However, the other three types (imported files, local storage files, and cloud storage files) are more complex. 
 
@@ -211,7 +211,7 @@ services:
     container_name: ml-backend-1
     ...
     environment:
-      # Specify the Label Studio URL and API key to access
+      # Specify the Annotation Hub URL and API key to access
       # uploaded, local storage and cloud storage files.
       # Do not use 'localhost' as it does not work within Docker containers.
       # Use prefix 'http://' or 'https://' for the URL always.
@@ -228,7 +228,7 @@ Note the following:
 
 * `LABEL_STUDIO_URL` must start either with `http://` or `https://`.
 
-To find your `LABEL_STUDIO_API_KEY`, open Label Studio and go to your [user account page](user_account#Access-token). 
+To find your `LABEL_STUDIO_API_KEY`, open Annotation Hub and go to your [user account page](user_account#Access-token). 
 
 <div class="enterprise-only">
 
@@ -240,7 +240,7 @@ Note that your user must also have access to the project that you are connecting
 
 Training a model allows it to learn from submitted annotations and potentially improve its predictions for subsequent tasks. 
 
-After you connect a model to Label Studio as a machine learning backend and annotate at least one task, you can start training the model. You can use automated or manual training. 
+After you connect a model to Annotation Hub as a machine learning backend and annotate at least one task, you can start training the model. You can use automated or manual training. 
 
 <div class="enterprise-only">
 
@@ -275,14 +275,14 @@ To see more detailed logs, start the ML backend server with the `--debug` option
 
 ### Get predictions from a model
 
-After you connect a model to Label Studio, you can see model predictions in the labeling interface if the model is pre-trained, or right after it finishes [training](#Model-training). 
+After you connect a model to Annotation Hub, you can see model predictions in the labeling interface if the model is pre-trained, or right after it finishes [training](#Model-training). 
 
 * To manually add predictions, go to the Data Manager, select the tasks you want to get predictions for, and then select **Actions > Retrieve predictions**.
 * To automatically pre-label data with predictions, go to the project settings and enable **Annotation > Use predictions to prelabel tasks** and ensure that you have selected the appropriate model from the **Select which predictions or which model you want to use** drop-down menu. 
 
 
 !!! note
-    For a large dataset, the HTTP request to retrieve predictions might be interrupted by a timeout. If you want to **get all predictions** for all tasks in a dataset from connected machine learning backends, make a [POST call to the predictions endpoint of the Label Studio API](/api/#operation/api_predictions_create) for each task to prompt the machine learning backend to create predictions for the tasks. 
+    For a large dataset, the HTTP request to retrieve predictions might be interrupted by a timeout. If you want to **get all predictions** for all tasks in a dataset from connected machine learning backends, make a [POST call to the predictions endpoint of the Annotation Hub API](/api/#operation/api_predictions_create) for each task to prompt the machine learning backend to create predictions for the tasks. 
 
 If you want to retrieve predictions manually for a list of tasks **using only an ML backend**, make a POST request to the `/predict` URL of your ML backend with a payload of the tasks that you want to see predictions for, formatted like the following example: 
 
@@ -328,7 +328,7 @@ For image labeling, after you enable auto-annotation you can choose whether to *
    
 ### Delete predictions 
 
-If you want to delete all predictions from Label Studio, you can do it using the Data Manager or the API:
+If you want to delete all predictions from Annotation Hub, you can do it using the Data Manager or the API:
 - For a specific project, select the tasks that you want to delete predictions for and select **Delete predictions** from the drop-down menu.
 - Using the API, run the following from the command line to delete the predictions for a specific project ID:
 ```

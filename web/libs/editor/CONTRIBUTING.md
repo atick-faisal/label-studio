@@ -1,4 +1,4 @@
-# Contributing to Label Studio
+# Contributing to Annotation Hub
 
 First off, thanks for taking the time to contribute!
 

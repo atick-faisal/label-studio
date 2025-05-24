@@ -1,79 +1,79 @@
 ---
-title: Secure Label Studio
+title: Secure Annotation Hub
 type: guide
 tier: all
 order: 99
 order_enterprise: 99
-meta_title: Secure Label Studio
-meta_description: About the security and hardening processes used by various Label Studio editions, and how you can configure a more secure data labeling project.
+meta_title: Secure Annotation Hub
+meta_description: About the security and hardening processes used by various Annotation Hub editions, and how you can configure a more secure data labeling project.
 section: "Install & Setup"
 ---
 
-Label Studio provides many ways to secure access to your data and your deployment architecture.
+Annotation Hub provides many ways to secure access to your data and your deployment architecture.
 
 All application component interactions are encrypted using the TLS protocol.
 
 <div class="enterprise-only">
 
-Role-based access control is only available in Label Studio Enterprise.
+Role-based access control is only available in Annotation Hub Enterprise.
 
 </div>
 
-<!--If you need to meet strong privacy regulations, legal requirements, or you want to make a custom installation within your infrastructure or any public cloud (AWS, Google, Azure, etc.), Label Studio Enterprise works on-premises. It is a self-contained version (no Internet connection is required) of the Platform, no data will leave your infrastructure. To make the installation the most accessible, we offer a Docker image.-->
+<!--If you need to meet strong privacy regulations, legal requirements, or you want to make a custom installation within your infrastructure or any public cloud (AWS, Google, Azure, etc.), Annotation Hub Enterprise works on-premises. It is a self-contained version (no Internet connection is required) of the Platform, no data will leave your infrastructure. To make the installation the most accessible, we offer a Docker image.-->
 
-Label Studio establishes secure connections to the web application by enforcing HTTPS and secured cookies.
+Annotation Hub establishes secure connections to the web application by enforcing HTTPS and secured cookies.
 
 <div class="opensource-only">
 
-If you're running the open source version in production, restrict access to the Label Studio server.
+If you're running the open source version in production, restrict access to the Annotation Hub server.
 Restrict access to the server itself by opening only the [required ports](/guide/install.html#Port_requirements) on the server.
 
 </div>
 
-## Secure user access to Label Studio
+## Secure user access to Annotation Hub
 
-Secure user access to Label Studio to protect data integrity and allow changes to be performed only by those with access to the system.
+Secure user access to Annotation Hub to protect data integrity and allow changes to be performed only by those with access to the system.
 
-Each user must create an account with a password of at least 8 characters, allowing you to track who has access to Label Studio and which actions they perform.
+Each user must create an account with a password of at least 8 characters, allowing you to track who has access to Annotation Hub and which actions they perform.
 
 <div class="opensource-only">
 
-You can restrict signup to only those with a link to the signup page, and the invitation link to the signup page can be reset. See [Set up user accounts for Label Studio](/guide/signup.html) for more.
+You can restrict signup to only those with a link to the signup page, and the invitation link to the signup page can be reset. See [Set up user accounts for Annotation Hub](/guide/signup.html) for more.
 
 </div>
 
 <div class="enterprise-only">
 
-You can restrict signup to only those with a link to the signup page, and the invitation link to the signup page can be reset. See [Set up user accounts for Label Studio](/guide/manage_users.html#Signup) for more.
+You can restrict signup to only those with a link to the signup page, and the invitation link to the signup page can be reset. See [Set up user accounts for Annotation Hub](/guide/manage_users.html#Signup) for more.
 
 </div>
 
 <div class="enterprise-only">
 
-If you're using Label Studio Enterprise, you can further secure user access in many ways:
+If you're using Annotation Hub Enterprise, you can further secure user access in many ways:
 
-- Assign specific roles to specific user accounts to set up role-based access control. For more about the different roles and permissions in Label Studio Enterprise, see [Manage access to Label Studio](/guide/manage_users.html).
-- Set up organizations, workspaces, and projects to separate projects and data across different groups of users. Users in one organization cannot see the workspaces or projects in other organizations. For more about how to use organizations, workspaces, and projects to secure access, see [Organize projects in Label Studio](/guide/manage_users.html#Roles-and-workspaces).
+- Assign specific roles to specific user accounts to set up role-based access control. For more about the different roles and permissions in Annotation Hub Enterprise, see [Manage access to Annotation Hub](/guide/manage_users.html).
+- Set up organizations, workspaces, and projects to separate projects and data across different groups of users. Users in one organization cannot see the workspaces or projects in other organizations. For more about how to use organizations, workspaces, and projects to secure access, see [Organize projects in Annotation Hub](/guide/manage_users.html#Roles-and-workspaces).
 
 </div>
 
-## Secure API access to Label Studio
+## Secure API access to Annotation Hub
 
-Access to the REST API is restricted by user role and requires an access token that is specific to a user account. Access tokens can be reset at any time from the Label Studio UI or using the API.
+Access to the REST API is restricted by user role and requires an access token that is specific to a user account. Access tokens can be reset at any time from the Annotation Hub UI or using the API.
 
 ## Enable SSRF protection for production environments
 
-When deploying Label Studio into a production environment, set the `SSRF_PROTECTION_ENABLED` environment variable to `true`. 
+When deploying Annotation Hub into a production environment, set the `SSRF_PROTECTION_ENABLED` environment variable to `true`. 
 
 This variable is disabled by default to support users who are working with data in their local environments. However, it should be enabled in production usage. 
 
 
-## Secure access to data in Label Studio
+## Secure access to data in Annotation Hub
 
-Data in Label Studio is stored in one or two places, depending on your deployment configuration.
+Data in Annotation Hub is stored in one or two places, depending on your deployment configuration.
 
-- Project settings and configuration details are stored in Label Studio's internal database.
-- Input data (texts, images, audio files) is hosted by external data storage and provided to the Label Studio by using URI links. The data is not stored in Label Studio directly, the content is retrieved client-side only.
+- Project settings and configuration details are stored in Annotation Hub's internal database.
+- Input data (texts, images, audio files) is hosted by external data storage and provided to the Annotation Hub by using URI links. The data is not stored in Annotation Hub directly, the content is retrieved client-side only.
 - Project annotations are stored in the internal database, and optionally can be stored in a local file directory, a Redis database, or cloud storage buckets on Amazon Web Services (AWS), Google Cloud Platform (GCP), or Microsoft Azure.
   
 
@@ -85,9 +85,9 @@ Data in Label Studio is stored in one or two places, depending on your deploymen
 
 ### Secure database access
 
-Label Studio does not permit direct access to the internal databases from the app to prevent SQL injection attacks and other data exfiltration attempts.
+Annotation Hub does not permit direct access to the internal databases from the app to prevent SQL injection attacks and other data exfiltration attempts.
 
-Instead, the app uses URIs to access the data stored in the database. These URIs can only be accessed by the Label Studio labeling interface and API because the requests to retrieve the data using those URIs are verified and proxied by Basic Authentication headers.
+Instead, the app uses URIs to access the data stored in the database. These URIs can only be accessed by the Annotation Hub labeling interface and API because the requests to retrieve the data using those URIs are verified and proxied by Basic Authentication headers.
 
 All specific object properties that are exposed with a REST API are added to an allowlist. The API endpoints can only be accessed with specific HTTP verbs and must be accessed by browser-based clients that implement a proper Cross-Origin Resource Sharing (CORS) policy. API tokens are user-specific and can be reset at any time.
 
@@ -95,13 +95,13 @@ The PostgreSQL database has SSL mode enabled and requires valid certificates.
 
 ### Secure access to cloud storages
 
-Each project in Label Studio can be linked to various cloud storage options such as AWS S3, Google Cloud Storage, and others. Users primarily access files from cloud storage through pre-signed URLs generated by Label Studio. You can configure multiple cloud storage connections per project with different credentials to manage data access. Learn how to set up [cloud storage settings](storage).
+Each project in Annotation Hub can be linked to various cloud storage options such as AWS S3, Google Cloud Storage, and others. Users primarily access files from cloud storage through pre-signed URLs generated by Annotation Hub. You can configure multiple cloud storage connections per project with different credentials to manage data access. Learn how to set up [cloud storage settings](storage).
 
 Combine workspaces, projects, users, and roles. This approach helps configure and secure cloud storage access effectively.
 
 #### Source storage logic and security
 
-Label Studio's cloud storage integration performs two key operations: 
+Annotation Hub's cloud storage integration performs two key operations: 
 * **Task sync and import**
 * **Media file serving**
 
@@ -111,25 +111,25 @@ Below, both are explained from a security perspective.
 
 After connecting a storage to a project, you have several options to load tasks into the project. Depending on the option, you need to provide specific permissions:
 
-* **Sync media files** (**LIST** permission required): Storage Sync automatically creates Label Studio tasks based on the file list in your storage when **Treat every bucket object as a source file** is enabled. Label Studio does not read the file content; it simply references the files (e.g., `{"image": "s3://bucket/1.jpg"}`).
+* **Sync media files** (**LIST** permission required): Storage Sync automatically creates Annotation Hub tasks based on the file list in your storage when **Treat every bucket object as a source file** is enabled. Annotation Hub does not read the file content; it simply references the files (e.g., `{"image": "s3://bucket/1.jpg"}`).
 
-* **Sync JSON task files** (**LIST** and **GET** permissions required): Storage Sync reads Label Studio tasks from JSON files in your bucket and loads the entire JSON content into the Label Studio database when "Treat every bucket object as a source file" is enabled.
+* **Sync JSON task files** (**LIST** and **GET** permissions required): Storage Sync reads Annotation Hub tasks from JSON files in your bucket and loads the entire JSON content into the Annotation Hub database when "Treat every bucket object as a source file" is enabled.
 
-* **No sync** (**none** permissions required): You can manually import JSON files containing Label Studio tasks and reference storage URIs (e.g., `{"image": "s3://bucket/1.jpg"}`) inside tasks.
+* **No sync** (**none** permissions required): You can manually import JSON files containing Annotation Hub tasks and reference storage URIs (e.g., `{"image": "s3://bucket/1.jpg"}`) inside tasks.
 
 ##### Media file serving
 
-Once Label Studio tasks are created, users can view and edit tasks in their browsers. To access media stored in your bucket, the following steps occur:
+Once Annotation Hub tasks are created, users can view and edit tasks in their browsers. To access media stored in your bucket, the following steps occur:
 
-1. **Pre-signed URL Generation**: Label Studio Backend generates pre-signed URLs for files in the storage bucket. This step requires **GET** permission for pre-signed URL generation, but Label Studio does not download your data.
+1. **Pre-signed URL Generation**: Annotation Hub Backend generates pre-signed URLs for files in the storage bucket. This step requires **GET** permission for pre-signed URL generation, but Annotation Hub does not download your data.
 
 2. **User Browser Downloads**: The user's browser downloads and displays the media when viewing or labeling tasks. This requires the user's browser to access the pre-signed URLs directly.
 
 #### Source storage behind your VPC
 
-To ensure maximum security and isolation of your data behind a VPC, only allow access to the Label Studio backend and users within your internal network. To do this, you can use the following technique — especially effective with Label Studio SaaS (Cloud, `app.humansignal.com`):
+To ensure maximum security and isolation of your data behind a VPC, only allow access to the Annotation Hub backend and users within your internal network. To do this, you can use the following technique — especially effective with Annotation Hub SaaS (Cloud, `app.humansignal.com`):
 
-1. Set **IP restrictions** for your storage to **allow Label Studio to perform task synchronization and generate pre-signed URLs** for media file serving. IP restrictions enhance security by ensuring that only trusted networks can access your storage. GET (`s3:GetObject` for S3) and LIST (`s3:ListBucket` for S3) permissions are required. <span class="enterprise-only">The IP ranges for `app.humansignal.com` can be found in the documentation [here](saas#IP-range).</span>
+1. Set **IP restrictions** for your storage to **allow Annotation Hub to perform task synchronization and generate pre-signed URLs** for media file serving. IP restrictions enhance security by ensuring that only trusted networks can access your storage. GET (`s3:GetObject` for S3) and LIST (`s3:ListBucket` for S3) permissions are required. <span class="enterprise-only">The IP ranges for `app.humansignal.com` can be found in the documentation [here](saas#IP-range).</span>
 
 2. **Establish secure connection** between Storage and Users' Browsers:
     - Configure a VPC private endpoint and route VPN traffic to it so that users' browsers can securely access the S3 bucket using only your Virtual Private Network (VPN).
@@ -139,29 +139,29 @@ To ensure maximum security and isolation of your data behind a VPC, only allow a
   - [AWS S3 Storage: IP Filtering and VPN for Enhanced Security](storage#IP-Filtering-and-VPN-for-Enhanced-Security-for-S3-storage).
   - [Google Cloud Storage: IP Filtering for Enhanced Security](storage#IP-Filtering-for-Enhanced-Security-for-GCS-storage).
 
-<i>This image shows how you can securely configure source cloud storages with Label Studio using your VPC and IP restrictions</i> 
+<i>This image shows how you can securely configure source cloud storages with Annotation Hub using your VPC and IP restrictions</i> 
 
-<img width="49%" style="display: inline-block; margin-right: 5px;" src="/images/storages/cloud-storage-ip-restriction.jpg" alt="Label Studio + Cloud Storage IP Restriction" class="make-intense-zoom" />
+<img width="49%" style="display: inline-block; margin-right: 5px;" src="/images/storages/cloud-storage-ip-restriction.jpg" alt="Annotation Hub + Cloud Storage IP Restriction" class="make-intense-zoom" />
 
-<img width="49%" style="display: inline-block;" src="/images/storages/cloud-storage-vpn.jpg" alt="Label Studio + Cloud Storage VPC" class="make-intense-zoom" />
+<img width="49%" style="display: inline-block;" src="/images/storages/cloud-storage-vpn.jpg" alt="Annotation Hub + Cloud Storage VPC" class="make-intense-zoom" />
 
 
 
 ### Secure access to Redis storage
 
-If you use Redis as an external storage database for data and annotations, the setup supports TLS/SSL and requires the Label Studio client to be authenticated to the database with a valid certificate.
+If you use Redis as an external storage database for data and annotations, the setup supports TLS/SSL and requires the Annotation Hub client to be authenticated to the database with a valid certificate.
 
 <div class="enterprise-only">
 
 ## Audit logging
 
-Label Studio Enterprise automatically logs all user activities so that you can monitor the activities being performed in the application.
+Annotation Hub Enterprise automatically logs all user activities so that you can monitor the activities being performed in the application.
 
 </div>
 
-## Information collected by Label Studio
+## Information collected by Annotation Hub
 
-Label Studio collects usage statistics including the number of page visits, number of annotations, and data types being used in labeling configurations that you set up. The information we collect helps us improve the experience of labeling data in Label Studio and helps us plan future data types and labeling configurations to support.
+Annotation Hub collects usage statistics including the number of page visits, number of annotations, and data types being used in labeling configurations that you set up. The information we collect helps us improve the experience of labeling data in Annotation Hub and helps us plan future data types and labeling configurations to support.
 
 <div class="opensource-only">
 

@@ -1,18 +1,18 @@
 ---
-title: Review annotations in Label Studio
+title: Review annotations in Annotation Hub
 short: Review annotations
 tier: enterprise
 type: guide
 order: 0
 order_enterprise: 304
-meta_title: Review annotation quality in Label Studio
+meta_title: Review annotation quality in Annotation Hub
 meta_description: In data labeling projects, start evaluating annotator performance against ground truth annotations, predictions, and other annotator's annotations.
 section: "Review & Measure Quality"
 ---
 
 After multiple labelers have annotated tasks, review their output to validate the quality of the results. You can also perform this task after a model has predicted labels for tasks in your dataset. To configure the settings for reviewing annotations, see [Set up review settings for your project](setup_project.html#Set-up-review-settings-for-your-project).
 
-The annotation review workflow is only available in Label Studio Enterprise Edition. If you're using Label Studio Community Edition, see <a href="https://labelstud.io/guide/label_studio_compare.html">Label Studio Features</a> to learn more.
+The annotation review workflow is only available in Annotation Hub Enterprise Edition. If you're using Annotation Hub Community Edition, see <a href="https://labelstud.io/guide/label_studio_compare.html">Annotation Hub Features</a> to learn more.
 
 See the following video for an overview of reviewer workflows: 
 
@@ -54,7 +54,7 @@ You can review tasks in random order, or order tasks in the project data manager
 
 You can now navigate back through the review stream in the same path as moving forward when `Mark task as reviewed after all annotations are processed` option is set. The go back (`<`)functionality takes you back through the same set of annotations as it had moving forward.
 
-1. As an **ADMINISTRATOR**, log in to the [Label Studio app](https://app.heartex.com/projects/?page=1).
+1. As an **ADMINISTRATOR**, log in to the [Annotation Hub app](https://app.heartex.com/projects/?page=1).
 
 2. Navigate to **All Projects** page, if needed.
 
@@ -198,12 +198,12 @@ You can also review the distribution of agreement percentages across project tas
 
 ## Review annotations against ground truth annotations
 
-Define ground truth annotations in a Label Studio project. Use ground truth annotations to assess the quality of your annotated dataset. Review ground truths to make sure that annotators are accurately labeling data at the start of the project, and continually throughout the lifecycle of the training dataset creation.
+Define ground truth annotations in a Annotation Hub project. Use ground truth annotations to assess the quality of your annotated dataset. Review ground truths to make sure that annotators are accurately labeling data at the start of the project, and continually throughout the lifecycle of the training dataset creation.
 
-Label Studio Enterprise compares annotations from annotators and model predictions against the ground truth annotations for a task to calculate an accuracy score between 0 and 1.
+Annotation Hub Enterprise compares annotations from annotators and model predictions against the ground truth annotations for a task to calculate an accuracy score between 0 and 1.
 
 !!! note
-    Ground truth annotations are only available in Label Studio Enterprise Edition. If you're using Label Studio Community Edition, see [Label Studio Features](https://labelstud.io/guide/label_studio_compare.html) to learn more.
+    Ground truth annotations are only available in Annotation Hub Enterprise Edition. If you're using Annotation Hub Community Edition, see [Annotation Hub Features](https://labelstud.io/guide/label_studio_compare.html) to learn more.
 
 ## Define ground truth annotations for a project
 

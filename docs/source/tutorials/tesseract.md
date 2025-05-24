@@ -5,8 +5,8 @@ tier: all
 order: 55
 hide_menu: true
 hide_frontmatter_title: true
-meta_title: Interactive bounding boxes OCR in Label Studio with a Tesseract backend
-meta_description: Tutorial for how to use Label Studio and Tesseract to assist with your OCR projects
+meta_title: Interactive bounding boxes OCR in Annotation Hub with a Tesseract backend
+meta_description: Tutorial for how to use Annotation Hub and Tesseract to assist with your OCR projects
 categories:
     - Computer Vision
     - Optical Character Recognition
@@ -23,7 +23,7 @@ models.
 Tesseract is used for OCR but minimal adaptation is needed to connect other OCR
 engines or models.
 
-Tested against Label Studio 1.10.1, with basic support for both Label Studio
+Tested against Annotation Hub 1.10.1, with basic support for both Annotation Hub
 Local File Storage and S3-compatible storage, with a example data storage with
 MinIO.
 
@@ -34,13 +34,13 @@ Before you begin:
 * Ensure Docker Compose is installed. For MacOS and Windows users,
    we suggest using Docker Desktop. 
 
-You must also install the [Label Studio ML backend](https://github.com/HumanSignal/label-studio-ml-backend?tab=readme-ov-file#quickstart). 
+You must also install the [Annotation Hub ML backend](https://github.com/HumanSignal/label-studio-ml-backend?tab=readme-ov-file#quickstart). 
 
 This tutorial uses the [`tesseract` example](https://github.com/HumanSignal/label-studio-ml-backend/tree/master/label_studio_ml/examples/tesseract). 
 
-### 1. Install Label Studio
+### 1. Install Annotation Hub
 
-Launch Label Studio. You can follow the guide from the [official documentation](https://labelstud.io/guide/install.html) or use the following commands:
+Launch Annotation Hub. You can follow the guide from the [official documentation](https://labelstud.io/guide/install.html) or use the following commands:
 
    ```
    docker run -it \
@@ -49,7 +49,7 @@ Launch Label Studio. You can follow the guide from the [official documentation](
       heartexlabs/label-studio:latest
    ```
 
-   Optionally, you may enable local file serving in Label Studio
+   Optionally, you may enable local file serving in Annotation Hub
 
    ```
    docker run -it \
@@ -60,9 +60,9 @@ Launch Label Studio. You can follow the guide from the [official documentation](
       heartexlabs/label-studio:latest
    ```
    If you're using local file serving, be sure to [get a copy of the API token](https://labelstud.io/guide/user_account#Access-token) from
-   Label Studio to connect the model.
+   Annotation Hub to connect the model.
 
-### 2. Create a Label Studio project
+### 2. Create a Annotation Hub project
 
 Create a new project for Tesseract OCR. In the project **Settings** set up the **Labeling Interface**.
 
@@ -88,7 +88,7 @@ Create a new project for Tesseract OCR. In the project **Settings** set up the *
 
 ### 3. Install Tesseract OCR
 
-Download the Label Studio Machine Learning backend repository.
+Download the Annotation Hub Machine Learning backend repository.
    ```
    git clone https://github.com/humansignal/label-studio-ml-backend
    cd label-studio-ml-backend/label_studio_ml/examples/tesseract
@@ -113,7 +113,7 @@ Depending on your data ingestion method, several configurations are possible:
 
 **Local File Storage**
 
-If you opted to use Label Studio Local File Storage, be sure to set the `LABEL_STUDIO_HOST` and `LABEL_STUDIO_ACCESS_TOKEN` variables. 
+If you opted to use Annotation Hub Local File Storage, be sure to set the `LABEL_STUDIO_HOST` and `LABEL_STUDIO_ACCESS_TOKEN` variables. 
 
 **S3-Compatible Storage (MinIO or AWS S3)**
 
@@ -137,8 +137,8 @@ If you host your images on any other public storage with `http` or `https` acces
 
 ### 5. Upload tasks
 
-   If you're using the Label Studio Local File Storage option, upload images
-   directly to Label Studio using the Label Studio interface.
+   If you're using the Annotation Hub Local File Storage option, upload images
+   directly to Annotation Hub using the Annotation Hub interface.
 
    If you're using MinIO for task storage, log into the MinIO control panel at
    `http://localhost:9001`. Create a new bucket, making a note of the name, and

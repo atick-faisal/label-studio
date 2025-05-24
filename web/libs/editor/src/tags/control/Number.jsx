@@ -29,7 +29,7 @@ import { cn } from "../../utils/bem";
  *
  * @name Number
  * @meta_title Number Tag to Numerically Classify
- * @meta_description Customize Label Studio with the Number tag to numerically classify tasks in your machine learning and data science projects.
+ * @meta_description Customize Annotation Hub with the Number tag to numerically classify tasks in your machine learning and data science projects.
  * @param {string} name                       - Name of the element
  * @param {string} toName                     - Name of the element that you want to label
  * @param {number} [min]                      - Minimum number value

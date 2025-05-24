@@ -1,12 +1,12 @@
 ---
-title: Available Helm values for Label Studio Helm Chart
+title: Available Helm values for Annotation Hub Helm Chart
 short: Available Helm values
 tier: all
 type: guide
 order: 72
 order_enterprise: 72
-meta_title: Available Helm values for Label Studio Helm Chart
-meta_description: For cases when you want to customize your Label Studio Kubernetes deployment, review these available Helm values that you can set in your Helm chart.
+meta_title: Available Helm values for Annotation Hub Helm Chart
+meta_description: For cases when you want to customize your Annotation Hub Kubernetes deployment, review these available Helm values that you can set in your Helm chart.
 section: "Install & Setup"
 parent: "install_k8s"
 parent_enterprise: "install_enterprise_k8s"
@@ -40,14 +40,14 @@ parent_enterprise: "install_enterprise_k8s"
 <div class="opensource-only">
 
 Refer to these tables with available Helm chart values for your `values.yaml` file
-when configuring your Label Studio deployment on Kubernetes. See [Deploy Label Studio on Kubernetes](install_k8s) for more.
+when configuring your Annotation Hub deployment on Kubernetes. See [Deploy Annotation Hub on Kubernetes](install_k8s) for more.
 
 </div>
 
 <div class="enterprise-only">
 
 Refer to these tables with available Helm chart values for your `values.yaml` file
-when configuring your Label Studio deployment on Kubernetes. See [Deploy Label Studio on Kubernetes](install_enterprise_k8s) for more.
+when configuring your Annotation Hub deployment on Kubernetes. See [Deploy Annotation Hub on Kubernetes](install_enterprise_k8s) for more.
 
 </div>
 
@@ -125,7 +125,7 @@ Global parameters for the Helm chart.
 
 ## App parameters
 
-Parameters specific to the `app` portion of the Label Studio deployment.
+Parameters specific to the `app` portion of the Annotation Hub deployment.
 
 | Parameter                                      | Description                                                                                                          | Default                  |
 |------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|--------------------------|
@@ -215,7 +215,7 @@ Parameters specific to the `app` portion of the Label Studio deployment.
 
 ## Rqworker parameters
 
-Parameters specific to the `rqworkers` service of your Label Studio Enterprise deployment.
+Parameters specific to the `rqworkers` service of your Annotation Hub Enterprise deployment.
 
 | Parameter                                        | Description                                                                                     | Default                                |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------|----------------------------------------|
@@ -275,12 +275,12 @@ Parameters specific to the `rqworkers` service of your Label Studio Enterprise d
 
 <div class="enterprise-only">
 
-## Label Studio Enterprise parameters
+## Annotation Hub Enterprise parameters
 
 | Parameter                                 | Description                                                                        | Default   |
 |-------------------------------------------|------------------------------------------------------------------------------------|-----------|
 | `enterprise.enabled`                      | Enable Enterprise features                                                         | `false`   |
-| `enterprise.enterpriseLicense.secretName` | Name of an existing secret holding the Label Studio Enterprise license information | `""`      |
+| `enterprise.enterpriseLicense.secretName` | Name of an existing secret holding the Annotation Hub Enterprise license information | `""`      |
 | `enterprise.enterpriseLicense.secretKey`  | Key of an existing secret holding the enterprise license information               | `license` |
 
 </div>
@@ -309,9 +309,9 @@ Parameters specific to the `rqworkers` service of your Label Studio Enterprise d
 
 ## The `global.extraEnvironmentVars` usage
 
-The `global.extraEnvironmentVars` section can be used to configure environment properties of Label Studio.
+The `global.extraEnvironmentVars` section can be used to configure environment properties of Annotation Hub.
 
-Any key value put under this section translates to environment variables used to control Label Studio's configuration. Every key is upper-cased before setting the environment variable.
+Any key value put under this section translates to environment variables used to control Annotation Hub's configuration. Every key is upper-cased before setting the environment variable.
 
 An example:
 
@@ -322,6 +322,6 @@ global:
 ```
 
 !!! note
-    If you are deploying to a production environment, you should set `SSRF_PROTECTION_ENABLED: true`. See [Secure Label Studio](security#Enable-SSRF-protection-for-production-environments). 
+    If you are deploying to a production environment, you should set `SSRF_PROTECTION_ENABLED: true`. See [Secure Annotation Hub](security#Enable-SSRF-protection-for-production-environments). 
 
 

@@ -277,7 +277,7 @@ class OrganizationAPI(generics.RetrieveUpdateAPIView):
         x_fern_sdk_group_name='organizations',
         x_fern_sdk_method_name='get_invite',
         operation_summary='Get organization invite link',
-        operation_description='Get a link to use to invite a new member to an organization in Label Studio Enterprise.',
+        operation_description='Get a link to use to invite a new member to an organization in Annotation Hub Enterprise.',
         responses={200: OrganizationInviteSerializer()},
     ),
 )

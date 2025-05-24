@@ -5,8 +5,8 @@ tier: all
 order: 15
 hide_menu: true
 hide_frontmatter_title: true
-meta_title: Image segmentation in Label Studio using a Grounding DINO backend and SAM
-meta_description: Label Studio tutorial for using Grounding DINO and SAM for zero-shot object detection in images
+meta_title: Image segmentation in Annotation Hub using a Grounding DINO backend and SAM
+meta_description: Annotation Hub tutorial for using Grounding DINO and SAM for zero-shot object detection in images
 categories:
     - Computer Vision
     - Image Annotation
@@ -32,7 +32,7 @@ See [here](https://github.com/IDEA-Research/GroundingDINO) for more details abou
 
 ## Before you begin
 
-Before you begin, you must install the [Label Studio ML backend](https://github.com/HumanSignal/label-studio-ml-backend?tab=readme-ov-file#quickstart). 
+Before you begin, you must install the [Annotation Hub ML backend](https://github.com/HumanSignal/label-studio-ml-backend?tab=readme-ov-file#quickstart). 
 
 This tutorial uses the [`grounding_sam` example](https://github.com/HumanSignal/label-studio-ml-backend/tree/master/label_studio_ml/examples/grounding_sam). 
 
@@ -41,16 +41,16 @@ This tutorial uses the [`grounding_sam` example](https://github.com/HumanSignal/
 
 1. Make sure Docker is installed.
 2. Edit `docker-compose.yml` to include the following:
-   * `LABEL_STUDIO_HOST` sets the endpoint of the Label Studio host. Must begin with `http://` 
-   * `LABEL_STUDIO_ACCESS_TOKEN` sets the API access token for the Label Studio host. This can be found by logging
-  into Label Studio and [going to the **Account & Settings** page](https://labelstud.io/guide/user_account#Access-token). 
+   * `LABEL_STUDIO_HOST` sets the endpoint of the Annotation Hub host. Must begin with `http://` 
+   * `LABEL_STUDIO_ACCESS_TOKEN` sets the API access token for the Annotation Hub host. This can be found by logging
+  into Annotation Hub and [going to the **Account & Settings** page](https://labelstud.io/guide/user_account#Access-token). 
 
     Example:
    - `LABEL_STUDIO_HOST=http://123.456.7.8:8080`
    - `LABEL_STUDIO_ACCESS_TOKEN=your-api-key`
 
 3. Run `docker compose up`
-4. Check the IP of your backend using `docker ps`. You will use this URL when connecting the backend to a Label Studio project. Usually this is `http://localhost:9090`.
+4. Check the IP of your backend using `docker ps`. You will use this URL when connecting the backend to a Annotation Hub project. Usually this is `http://localhost:9090`.
 
 5. Create a project and edit the labeling config (an example is provided below). When editing the labeling config, make sure to add all rectangle labels under the `RectangleLabels` tag, and all corresponding brush labels under the `BrushLabels` tag.
 
@@ -102,7 +102,7 @@ To do this, set `USE_SAM=true` before running.
 
 > Warning: Using GroundingSAM without a GPU may result in slow performance and is not recommended. If you must use a CPU-only machine, and experience slow performance or don't see any predictions on the labeling screen, consider one of the following:
 > - Increase memory allocated to the Docker container (e.g. `memory: 16G` in `docker-compose.yml`)
-> - Increase the prediction timeout on Label Studio instance with the `ML_TIMEOUT_PREDICT=100` environment variable.
+> - Increase the prediction timeout on Annotation Hub instance with the `ML_TIMEOUT_PREDICT=100` environment variable.
 > - Use "MobileSAM" as a lightweight alternative to "SAM".
 
 If you want to use a [more efficient version of SAM](https://github.com/ChaoningZhang/MobileSAM), set `USE_MOBILE_SAM=true`.
@@ -114,12 +114,12 @@ https://github.com/HumanSignal/label-studio-ml-backend/assets/106922533/79b788e3
 
 > Note: This is an experimental feature.
 
-1. Clone the Label Studio feature branch that includes the experimental batching functionality.
+1. Clone the Annotation Hub feature branch that includes the experimental batching functionality.
 
     `git clone -b feature/dino-support https://github.com/HumanSignal/label-studio.git`
 
 2. Run this branch with `docker compose up`
-3. Do steps 2-5 from the [quickstart section](#quickstart), now using access code and host IP info of the newly cloned Label Studio branch. GroundingSAM is supported.
+3. Do steps 2-5 from the [quickstart section](#quickstart), now using access code and host IP info of the newly cloned Annotation Hub branch. GroundingSAM is supported.
 4. Go to the Data Manager in your project and select the tasks you would like to annotate.
 5. Select **Actions > Add Text Prompt for GroundingDINO**.
 6. Enter the prompt you would like to retrieve predictions for and click **Submit**.

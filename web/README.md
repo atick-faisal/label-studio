@@ -1,15 +1,15 @@
-# Label Studio
+# Annotation Hub
 
-Label Studio is a complex, NX-managed project divided into three main components:
+Annotation Hub is a complex, NX-managed project divided into three main components:
 
 ## [Main App (`apps/labelstudio`)][lso]
-This is the primary application that consolidates all frontend framework elements. It's the hub for integrating and managing the different libraries and functionalities of Label Studio.
+This is the primary application that consolidates all frontend framework elements. It's the hub for integrating and managing the different libraries and functionalities of Annotation Hub.
 
-## [Library - Label Studio Frontend (`libs/editor`)][lsf]
-Label Studio Frontend, developed with React and mobx-state-tree, is a robust frontend library tailored for data annotation. It's designed for seamless integration into your applications, providing a rich set of features for data handling and visualization. Customization and extensibility are core aspects, allowing for tailored annotation experiences.
+## [Library - Annotation Hub Frontend (`libs/editor`)][lsf]
+Annotation Hub Frontend, developed with React and mobx-state-tree, is a robust frontend library tailored for data annotation. It's designed for seamless integration into your applications, providing a rich set of features for data handling and visualization. Customization and extensibility are core aspects, allowing for tailored annotation experiences.
 
 ## [Library - Datamanager (`libs/datamanager`)][dm]
-Datamanager is an advanced tool specifically for data exploration within Label Studio. Key features include:
+Datamanager is an advanced tool specifically for data exploration within Annotation Hub. Key features include:
 
 <img align="right" height="180" src="https://github.com/HumanSignal/label-studio/blob/develop/images/heartex_icon_opossum_green@2x.png?raw=true" />
 
@@ -19,7 +19,7 @@ Datamanager is an advanced tool specifically for data exploration within Label S
 - Execute `yarn install --frozen-lockfile` to install all necessary dependencies.
 
 2 - **Environment Configuration (Optional for HMR):**
-- If you want to enable Hot Module Replacement (HMR), create an `.env` file in the root Label Studio directory.
+- If you want to enable Hot Module Replacement (HMR), create an `.env` file in the root Annotation Hub directory.
 - Add the following configuration:
   - `FRONTEND_HMR=true`: Enables Hot Module Replacement in Django.
 
@@ -40,17 +40,17 @@ To start the development server with HMR:
   - Duplicate the `.env.example` file located in the DataManager directory and rename the copy to `.env`.
   - Make your desired changes in this new `.env` file. The key configurations to consider are:
       - `NX_API_GATEWAY`: Set this to your API root. For example, `http://localhost:8080/api/dm`.
-      - `LS_ACCESS_TOKEN`: This is the access token for Label Studio, which can be obtained from your Label Studio account page.
+      - `LS_ACCESS_TOKEN`: This is the access token for Annotation Hub, which can be obtained from your Annotation Hub account page.
 - This process allows you to have a customized configuration for DataManager, separate from the default settings in the .env.local files.
 
 ## Usage Instructions
 ### Key Development and Build Commands
-- **Label Studio App:**
-    - `yarn ls:dev`: Build the main Label Studio app with Hot Module Reload for development.
-    - `yarn ls:watch`: Build the main Label Studio app continuously for development.
-    - `yarn ls:e2e`: Run end-to-end tests for the Label Studio app.
-    - `yarn ls:unit`: Run unit tests for the Label Studio app.
-- **Label Studio Frontend (Editor):**
+- **Annotation Hub App:**
+    - `yarn ls:dev`: Build the main Annotation Hub app with Hot Module Reload for development.
+    - `yarn ls:watch`: Build the main Annotation Hub app continuously for development.
+    - `yarn ls:e2e`: Run end-to-end tests for the Annotation Hub app.
+    - `yarn ls:unit`: Run unit tests for the Annotation Hub app.
+- **Annotation Hub Frontend (Editor):**
     - `yarn lsf:watch`: Continuously build the frontend editor.
     - `yarn lsf:serve`: Run the frontend editor standalone.
     - `yarn lsf:e2e`: Run end-to-end tests for the frontend editor.
@@ -82,7 +82,7 @@ If for any reason you need to format or lint using the same `pre-commit` hooks d
 | [label-studio-frontend][lsf]     | Frontend part, written in JavaScript and React, can be embedded into your application |
 | [label-studio-converter][lsc]    | Encode labels into the format of your favorite machine learning library |
 | [label-studio-transformers][lst] | Transformers library connected and configured for use with label studio |
-| [datamanager][dm]                | Data exploration tool for Label Studio |
+| [datamanager][dm]                | Data exploration tool for Annotation Hub |
 
 ## License
 

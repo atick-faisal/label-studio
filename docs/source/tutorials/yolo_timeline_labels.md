@@ -1,12 +1,12 @@
 ---
-title: TimelineLabels ML Backend for Label Studio
+title: TimelineLabels ML Backend for Annotation Hub
 type: guide
 tier: all
 order: 51
 hide_menu: true
 hide_frontmatter_title: true
-meta_title: TimelineLabels ML Backend for Label Studio
-meta_description: Tutorial on how to use an example ML backend for Label Studio with TimelineLabels
+meta_title: TimelineLabels ML Backend for Annotation Hub
+meta_description: Tutorial on how to use an example ML backend for Annotation Hub with TimelineLabels
 categories:
     - Computer Vision
     - Video Classification
@@ -15,10 +15,10 @@ categories:
 image: "/tutorials/yolo-video-classification.png"
 ---
 
-# TimelineLabels Model for Temporal Video Multi-Label Classification in Label Studio
+# TimelineLabels Model for Temporal Video Multi-Label Classification in Annotation Hub
 
 This documentation provides a clear and comprehensive guide on how to use the TimelineLabels model 
-for temporal multi-label classification of video data in Label Studio. 
+for temporal multi-label classification of video data in Annotation Hub. 
 
 By integrating an LSTM neural network on top of YOLO's classification capabilities — 
 specifically utilizing features from YOLO's last layer — the model handles temporal labeling tasks. 
@@ -34,9 +34,9 @@ In trainable mode, you'll begin by annotating a few samples by hand. Each time y
 
 ## Installation and quickstart
 
-Before you begin, you need to install the [Label Studio ML backend](https://github.com/HumanSignal/label-studio-ml-backend/blob/master/README.md#quickstart). 
+Before you begin, you need to install the [Annotation Hub ML backend](https://github.com/HumanSignal/label-studio-ml-backend/blob/master/README.md#quickstart). 
 
-This tutorial uses the [YOLO example](https://github.com/HumanSignal/label-studio-ml-backend/tree/master/label_studio_ml/examples/yolo). See the [main README](https://github.com/HumanSignal/label-studio-ml-backend/blob/master/label_studio_ml/examples/yolo/README.md#quick-start) for detailed instructions on setting up the YOLO-models family in Label Studio.
+This tutorial uses the [YOLO example](https://github.com/HumanSignal/label-studio-ml-backend/tree/master/label_studio_ml/examples/yolo). See the [main README](https://github.com/HumanSignal/label-studio-ml-backend/blob/master/label_studio_ml/examples/yolo/README.md#quick-start) for detailed instructions on setting up the YOLO-models family in Annotation Hub.
 
 
 ## Labeling configuration
@@ -213,7 +213,7 @@ The cache is used for incremental training on the fly and prediction speedup.
      1. Navigate to the `yolo` folder in this repository in your terminal.
      2. Update your `docker-compose.yml` file.
      3. Execute `docker compose up` to run the backend. 
-     4. Connect this backend to your Label Studio project in the project settings. Make sure that **Interactive Preannotations** is OFF (this is the default). 
+     4. Connect this backend to your Annotation Hub project in the project settings. Make sure that **Interactive Preannotations** is OFF (this is the default). 
 
 ### Annotation and training
 
@@ -288,7 +288,7 @@ See `tests/test_timeline_labels.py::test_convert_probs_to_timelinelabels()` for 
 
 ## For developers
 
-This guide provides an in-depth look at the architecture and code flow of the TimelineLabels ML backend for Label Studio. It includes class inheritance diagrams and method call flowcharts to help developers understand how the components interact. Additionally, it offers explanations of key methods and classes, highlighting starting points and their roles in the overall workflow.
+This guide provides an in-depth look at the architecture and code flow of the TimelineLabels ML backend for Annotation Hub. It includes class inheritance diagrams and method call flowcharts to help developers understand how the components interact. Additionally, it offers explanations of key methods and classes, highlighting starting points and their roles in the overall workflow.
 
 ### Class inheritance diagram
 
@@ -307,7 +307,7 @@ classDiagram
     BaseNN <|-- MultiLabelLSTM
 ```
 
-- **`ControlModel`**: Base class for control tags in Label Studio.
+- **`ControlModel`**: Base class for control tags in Annotation Hub.
 - **`TimelineLabelsModel`**: Inherits from `ControlModel` and implements specific functionality for the `<TimelineLabels>` tag.
 - **`torch.nn.Module`**: Base class for all neural network modules in PyTorch.
 - **`BaseNN`**: Custom base class for neural networks, inherits from `torch.nn.Module`.
@@ -510,13 +510,13 @@ The `MultiLabelLSTM` class inherits from `BaseNN` and implements an LSTM neural 
 
 **Data Conversion Functions**:
 
-- **`convert_probs_to_timelinelabels(probs, label_map, threshold)`**: Converts probability outputs to timeline labels suitable for Label Studio.
+- **`convert_probs_to_timelinelabels(probs, label_map, threshold)`**: Converts probability outputs to timeline labels suitable for Annotation Hub.
 
 - **`convert_timelinelabels_to_probs(regions, label_map, max_frame)`**: Converts annotated regions back into a sequence of probabilities for training.
 
 ## Conclusion
 
-The TimelineLabels ML backend integrates seamlessly with Label Studio to provide temporal multi-label classification capabilities for video data. The architecture leverages pre-trained YOLO models for feature extraction and enhances them with an LSTM neural network for capturing temporal dependencies.
+The TimelineLabels ML backend integrates seamlessly with Annotation Hub to provide temporal multi-label classification capabilities for video data. The architecture leverages pre-trained YOLO models for feature extraction and enhances them with an LSTM neural network for capturing temporal dependencies.
 
 Understanding the class hierarchies and method flows is crucial for developers looking to extend or modify the backend. By following the starting points and execution flows outlined in this guide, developers can navigate the codebase more effectively and implement custom features or optimizations.
 

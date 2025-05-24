@@ -1,7 +1,7 @@
 import { LabelStudio } from "@humansignal/frontend-test/helpers/LSF";
 
-describe("Label Studio UI init", () => {
-  it("Initialize empty Label Studio", () => {
+describe("Annotation Hub UI init", () => {
+  it("Initialize empty Annotation Hub", () => {
     LabelStudio.init({
       config: "<View></View>",
       task: {
@@ -16,7 +16,7 @@ describe("Label Studio UI init", () => {
     });
   });
 
-  it("Initialize Label Studio", () => {
+  it("Initialize Annotation Hub", () => {
     LabelStudio.init({
       config: "<View></View>",
       task: {

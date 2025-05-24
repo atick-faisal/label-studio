@@ -6,7 +6,7 @@ There are 3 basic types of cloud storages:
 2. Export Storages (aka Target Cloud Storages)
 3. Dataset Storages (available in enterprise)
 
-Also Label Studio has Persistent storages where LS storage export files, user avatars and UI uploads. Do not confuse `Cloud Storages` and `Persistent Storage`, they have completely different codebase and tasks. Cloud Storages are implemented in `io_storages`, Persistent Storage uses django-storages and it is installed in Django settings environment variables (see `base.py`). 
+Also Annotation Hub has Persistent storages where LS storage export files, user avatars and UI uploads. Do not confuse `Cloud Storages` and `Persistent Storage`, they have completely different codebase and tasks. Cloud Storages are implemented in `io_storages`, Persistent Storage uses django-storages and it is installed in Django settings environment variables (see `base.py`). 
 
 
 
@@ -55,10 +55,10 @@ Target storages use the same validate_connection() function, but without any pre
 ### Credentials 
 
 There are two methods for setting GCS credentials:
-1. Through the Project => Cloud Storage settings in the Label Studio user interface.
+1. Through the Project => Cloud Storage settings in the Annotation Hub user interface.
 2. Through Google Application Default Credentials (ADC). This involves the following steps:
 
-   2.1. Leave the Google Application Credentials field in the Label Studio UI blank.
+   2.1. Leave the Google Application Credentials field in the Annotation Hub UI blank.
    
    2.2. Set an environment variable which will apply to all Cloud Storages. This can be done using the following command:
    ```bash
@@ -70,7 +70,7 @@ There are two methods for setting GCS credentials:
    ```
    2.4. Another option is to use credentials provided by the Google App Engine or Google Compute Engine metadata server, if the code is running on either GAE or GCE.
 
-Note: If Cloud Storage credentials are set in the Label Studio UI, these will take precedence over other methods.
+Note: If Cloud Storage credentials are set in the Annotation Hub UI, these will take precedence over other methods.
 
      
 
@@ -121,11 +121,11 @@ To handle these cases correctly, all these conditions must be checked in ensure_
 
 The Storage Proxy API is a critical component that handles access to files stored in cloud storages (S3, GCS, Azure, etc.). It serves two main purposes:
 
-1. **Security & Access Control**: It acts as a secure gateway to cloud storage resources, enforcing Label Studio's permission model and preventing direct exposure of cloud credentials to the client.
+1. **Security & Access Control**: It acts as a secure gateway to cloud storage resources, enforcing Annotation Hub's permission model and preventing direct exposure of cloud credentials to the client.
 
 2. **Flexible Content Delivery**: It supports two modes of operation based on the storage configuration:
    - **Redirect Mode** (`presign=True`): Generates pre-signed URLs with temporary access and redirects the client to them. This is efficient as content flows directly from the storage to the client.
-   - **Proxy Mode** (`presign=False`): Streams content through the Label Studio server. This provides additional security and is useful when storage providers don't support pre-signed URLs or when administrators want to enforce stricter access control.
+   - **Proxy Mode** (`presign=False`): Streams content through the Annotation Hub server. This provides additional security and is useful when storage providers don't support pre-signed URLs or when administrators want to enforce stricter access control.
 
 ### How It Works
 

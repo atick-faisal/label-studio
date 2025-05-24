@@ -21,7 +21,7 @@ Plugins (previously called "Custom Scripts") are defined in the project settings
     Plugins are not available unless enabled. There are [important security considerations](#Security-notes-constraints-and-limitations) to understand before requesting access. To enable plugins for your organization, contact your account manager or go to **Project > Settings > Labeling Interface** and click **Request Access**. 
 
 !!! error Enterprise
-    Plugins are only available in Label Studio Enterprise. They are not available in Starter Cloud or Community editions. 
+    Plugins are only available in Annotation Hub Enterprise. They are not available in Starter Cloud or Community editions. 
 
 ## Plugin examples
 

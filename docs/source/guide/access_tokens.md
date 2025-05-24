@@ -6,12 +6,12 @@ type: guide
 order: 381
 order_enterprise: 359
 meta_title: Access tokens
-meta_description: Access tokens to interact with the Label Studio API and SDK. 
+meta_description: Access tokens to interact with the Annotation Hub API and SDK. 
 section: "Manage Your Organization"
 date: 2025-02-18 12:03:59
 ---
 
-Label Studio has personal access tokens and legacy tokens. The options available to users are set at the Organization level. Se [Access settings for orgs](#Access-token-settings-for-orgs) below. 
+Annotation Hub has personal access tokens and legacy tokens. The options available to users are set at the Organization level. Se [Access settings for orgs](#Access-token-settings-for-orgs) below. 
 
 <table>
 <thead>
@@ -23,7 +23,7 @@ Label Studio has personal access tokens and legacy tokens. The options available
   <tr>
   <td>
     <ul>
-        <li>Have a TTL that can be set at the org level. (Label Studio Enterprise only)
+        <li>Have a TTL that can be set at the org level. (Annotation Hub Enterprise only)
         <li>Are only visible to users once
         <li>Can be manually revoked
         <li>Require extra steps when used with HTTP API
@@ -49,15 +49,15 @@ Label Studio has personal access tokens and legacy tokens. The options available
 Personal access tokens can be used with the Python SDK the same way in which legacy tokens were set:
 
 ```python
-# Define the URL where Label Studio is accessible and the API key for your user account
+# Define the URL where Annotation Hub is accessible and the API key for your user account
 LABEL_STUDIO_URL = 'http://localhost:8080'
-# API key is available at the Account & Settings > Access Tokens page in Label Studio UI
+# API key is available at the Account & Settings > Access Tokens page in Annotation Hub UI
 API_KEY = 'd6f8a2622d39e9d89ff0dfef1a80ad877f4ee9e3'
 
 # Import the SDK and the client module
 from label_studio_sdk.client import LabelStudio
 
-# Connect to the Label Studio API and check the connection
+# Connect to the Annotation Hub API and check the connection
 ls = LabelStudio(base_url=LABEL_STUDIO_URL, api_key=API_KEY)
 
 ```
@@ -119,9 +119,9 @@ From the **Organization** page, click **Access Token Settings** in the upper rig
 
 From here you can enable and disable token types. 
 
-* When a certain token type is disabled, existing tokens will not be able to authenticate to the Label Studio platform. 
+* When a certain token type is disabled, existing tokens will not be able to authenticate to the Annotation Hub platform. 
 
-* Use the Personal Access Token Time-to-Live to set an expiration date for personal access tokens. This is only available for Label Studio Enterprise users. 
+* Use the Personal Access Token Time-to-Live to set an expiration date for personal access tokens. This is only available for Annotation Hub Enterprise users. 
 
 
 ![Screenshot of Access Token window](/images/admin/token-settings.png)
@@ -129,6 +129,6 @@ From here you can enable and disable token types.
 
 ## Finding your access token
 
-You can create/manage your access token from your [**Account & Settings** page](user_account) (click your username in the upper right in Label Studio). 
+You can create/manage your access token from your [**Account & Settings** page](user_account) (click your username in the upper right in Annotation Hub). 
 
 

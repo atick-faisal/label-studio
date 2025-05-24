@@ -146,7 +146,7 @@ class TruncatedLSAPIToken(LSAPIToken):
         if len(parts) > 2:
             token = '.'.join(parts[:2])
         elif len(parts) < 2:
-            raise TokenError('Invalid Label Studio token')
+            raise TokenError('Invalid Annotation Hub token')
 
         # Add dummy signature with exactly 43 'x' characters to match expected JWT signature length
         token = token + '.' + ('x' * 43)

@@ -3,7 +3,7 @@ title: Ranker
 type: tags
 order: 419
 meta_title: Ranker Tag allows you to rank items in a List or, if Buckets are used, pick relevant items from a List
-meta_description: Customize Label Studio by sorting results for machine learning and data science projects.
+meta_description: Customize Annotation Hub by sorting results for machine learning and data science projects.
 ---
 
 The `Ranker` tag is used to rank items in a `List` tag or pick relevant items from a `List`, depending on using nested `Bucket` tags.

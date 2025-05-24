@@ -6,7 +6,7 @@ cat: llm-fine-tuning
 order: 903
 is_new: t
 meta_title: Create dataset for supervised LLM fine-tuning
-meta_description: Template for creating dataset for supervised LLM fine-tuning with Label Studio for your machine learning and data science projects.
+meta_description: Template for creating dataset for supervised LLM fine-tuning with Annotation Hub for your machine learning and data science projects.
 ---
 
 <img src="/images/templates/generative-supervised-llm.png" alt="" class="gif-border" width="700px"/>
@@ -69,13 +69,13 @@ Start your project with collecting initial set of prompts:
 ]
 ```
 
-Each JSON item will be rendered as a separate task in Label Studio to complete the response.
+Each JSON item will be rendered as a separate task in Annotation Hub to complete the response.
 
 ## Starting your labeling project
 
-*Need a hand getting started with Label Studio? Check out our [Zero to One Tutorial](https://labelstud.io/blog/zero-to-one-getting-started-with-label-studio/).*
+*Need a hand getting started with Annotation Hub? Check out our [Zero to One Tutorial](https://labelstud.io/blog/zero-to-one-getting-started-with-label-studio/).*
 
-1. Create new project in Label Studio
+1. Create new project in Annotation Hub
 2. Go to **Settings > Labeling Interface > Browse Templates > Generative AI > Supervised LLM Fine-tuning**
 3. Save
 Alternatively, you can create a new project by using our Python SDK:
@@ -89,7 +89,7 @@ project = ls.create_project(title='Chatbot Model Assessment', label_config='<Vie
 
 ## Import the dataset
 
-Using the Python SDK you can import the dataset with input prompts into Label Studio. With the `PROJECT_ID` of the project
+Using the Python SDK you can import the dataset with input prompts into Annotation Hub. With the `PROJECT_ID` of the project
 you've just created, run the following code:
 
 ```python
@@ -108,7 +108,7 @@ Then you can start annotating the dataset by creating the responses.
 There have to be from hundreds to thousands of tasks labeled to get your LLM being fine-tuned, depending on the
 complexity of your problem statement.
 
-After you've labeled enough tasks, you can export the dataset in the following raw Label Studio JSON format:
+After you've labeled enough tasks, you can export the dataset in the following raw Annotation Hub JSON format:
 
 ```json
 [

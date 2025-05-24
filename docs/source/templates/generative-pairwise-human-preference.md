@@ -6,7 +6,7 @@ cat: llm-fine-tuning
 order: 904
 is_new: t
 meta_title: Create Dataset for Human Preferences Collection for RLHF
-meta_description: Template for creating dataset for human preferences collection for RLHF with Label Studio for your machine learning and data science projects.
+meta_description: Template for creating dataset for human preferences collection for RLHF with Annotation Hub for your machine learning and data science projects.
 ---
 
 <img src="/images/templates/generative-pairwise-human-preference.png" alt="" class="gif-border" width="700px" />
@@ -45,17 +45,17 @@ Start with an initial set of prompts and responses, where each item is a JSON ob
 
 Collect examples either by generating them manually, or use your [baseline model to generate multiple alternative hypotheses](https://huggingface.co/blog/how-to-generate).
 
-After your dataset has started to be collected in `dataset.json` file, create a project and upload the dataset to Label Studio.
+After your dataset has started to be collected in `dataset.json` file, create a project and upload the dataset to Annotation Hub.
 
 ## Starting your labeling project
 
-1. Create new project in Label Studio
+1. Create new project in Annotation Hub
 2. Go to `Settings > Labeling Interface > Browse Templates > Generative AI > Human Preference collection for RLHF`
 3. Save the project
 
 ## Import the dataset
 
-Using python SDK you can import the dataset with input prompts into Label Studio. With the `PROJECT_ID` of the project
+Using python SDK you can import the dataset with input prompts into Annotation Hub. With the `PROJECT_ID` of the project
 you've just created, run the following code:
 
 ```python
@@ -174,7 +174,7 @@ Additionally, you can modify `"prompt"`, `$answer1` and `$answer2` in XML commen
 There have to be from hundreds to thousands of tasks labeled to get your LLM being fine-tuned, depending on the
 complexity of your problem statement.
 
-After you've labeled enough tasks, you can export the dataset in the following raw Label Studio JSON format:
+After you've labeled enough tasks, you can export the dataset in the following raw Annotation Hub JSON format:
 
 ```json
 [

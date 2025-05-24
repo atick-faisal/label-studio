@@ -83,7 +83,7 @@ export default types
     }),
 
     /**
-     * User of Label Studio
+     * User of Annotation Hub
      */
     user: types.optional(types.maybeNull(types.safeReference(UserExtended)), null),
 
@@ -93,7 +93,7 @@ export default types
     debug: window.HTX_DEBUG === true,
 
     /**
-     * Settings of Label Studio
+     * Settings of Annotation Hub
      */
     settings: types.optional(Settings, {}),
 
@@ -109,11 +109,11 @@ export default types
     showingSettings: types.optional(types.boolean, false),
     /**
      * Flag
-     * Description of task in Label Studio
+     * Description of task in Annotation Hub
      */
     showingDescription: types.optional(types.boolean, false),
     /**
-     * Loading of Label Studio
+     * Loading of Annotation Hub
      */
     isLoading: types.optional(types.boolean, false),
     /**
@@ -121,7 +121,7 @@ export default types
      */
     isSubmitting: false,
     /**
-     * Flag for disable task in Label Studio
+     * Flag for disable task in Annotation Hub
      */
     noTask: types.optional(types.boolean, false),
     /**

@@ -115,7 +115,7 @@ annotation_request_schema = openapi.Schema(
             items=openapi.Schema(
                 type=openapi.TYPE_OBJECT,
             ),
-            description='Labeling result in JSON format. Read more about the format in [the Label Studio documentation.](https://labelstud.io/guide/task_format)',
+            description='Labeling result in JSON format. Read more about the format in [the Annotation Hub documentation.](https://labelstud.io/guide/task_format)',
             example=result_example,
         ),
         'task': openapi.Schema(type=openapi.TYPE_INTEGER, description='Corresponding task for this annotation'),
@@ -152,7 +152,7 @@ prediction_request_schema = openapi.Schema(
             items=openapi.Schema(
                 type=openapi.TYPE_OBJECT,
             ),
-            description='Prediction result in JSON format. Read more about the format in [the Label Studio documentation.](https://labelstud.io/guide/predictions)',
+            description='Prediction result in JSON format. Read more about the format in [the Annotation Hub documentation.](https://labelstud.io/guide/predictions)',
             example=result_example,
         ),
         'score': openapi.Schema(

@@ -347,7 +347,7 @@ Let’s expand on the Q&A use case above with an example demonstrating how to us
 
 #### Appendix: Preprocess SQuAD Q&A dataset
 
-This downloads the SQuAD dataset from Huggingface and formats it for use in Label Studio.
+This downloads the SQuAD dataset from Huggingface and formats it for use in Annotation Hub.
 
 ```python
 import pandas as pd

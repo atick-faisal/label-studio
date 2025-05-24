@@ -6,12 +6,12 @@ type: guide
 order: 0
 order_enterprise: 356
 meta_title: About AI Assistant 
-meta_description: Information about using the AI features in Label Studio
+meta_description: Information about using the AI features in Annotation Hub
 section: "Manage Your Organization"
 date: 2025-01-28 16:40:16
 ---
 
-The Label Studio AI Assistant is an OpenAI LLM that has been trained on the Label Studio documentation, codebase, and several other Label Studio resources.
+The Annotation Hub AI Assistant is an OpenAI LLM that has been trained on the Annotation Hub documentation, codebase, and several other Annotation Hub resources.
 
 ## Use AI Assistant for project setup 
 
@@ -24,7 +24,7 @@ You can interact with this as you would a chat, meaning that you can build off y
 
 ## Use AI Assistant for general help
 
-You can also use AI Assistant to ask for troubleshooting and general help with Label Studio.  
+You can also use AI Assistant to ask for troubleshooting and general help with Annotation Hub.  
 
 ![Screenshot of AI Assistant for labeling configs](/images/admin/ai-ask.png)  
 
@@ -41,7 +41,7 @@ Your organization can enable AI Assistant from the **Organization > Billing & Us
 ![Screenshot of settings](/images/admin/ai-settings.png) 
 
 * **Enable AI Features**--This enables AI Assistant for your labeling interface configuration. 
-* **Early Adopter**--If AI features are enabled, this also ensures you can use the AI Assistant for general Label Studio help. 
+* **Early Adopter**--If AI features are enabled, this also ensures you can use the AI Assistant for general Annotation Hub help. 
 
 ### What models do you use?
 

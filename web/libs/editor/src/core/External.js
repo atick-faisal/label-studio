@@ -31,7 +31,7 @@ function onUnskipTask() {}
 function onTaskLoad() {}
 
 /**
- * Callback on Label Studio load
+ * Callback on Annotation Hub load
  */
 function onLabelStudioLoad() {}
 

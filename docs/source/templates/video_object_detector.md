@@ -6,7 +6,7 @@ cat: videos
 order: 803
 is_new: t
 meta_title: Video Object Detection Data Labeling Template
-meta_description: Template for detecting objects in videos with Label Studio for your machine learning and data science projects.
+meta_description: Template for detecting objects in videos with Annotation Hub for your machine learning and data science projects.
 ---
 
 <img src="/images/templates/video-object-tracking.png" alt="" class="gif-border" width="552px" height="408px" />
@@ -18,8 +18,8 @@ The illustrated templates provide both manual and automatic ways of tracking obj
 
 !!! attention "important"
 
-    1. Video classification and object tracking were available to preview prior to Label Studio version 1.6, but these features are now fully functional and production-ready. 
-    2. In Label Studio Enterprise, the video object tracking is called video labeling for video object detection. 
+    1. Video classification and object tracking were available to preview prior to Annotation Hub version 1.6, but these features are now fully functional and production-ready. 
+    2. In Annotation Hub Enterprise, the video object tracking is called video labeling for video object detection. 
     3. The supported video formats are `mpeg4/H.264 webp` and `webm`. The supported video format also depends on the browser, and any pre-conversions from the customer's side. 
 
 
@@ -180,7 +180,7 @@ You can accomplish this by using the `interpolate_key_frames` parameter and one 
 
 #### Use the API to create an export snapshot with interpolation enabled 
 
-You can use the Label Studio API to create an export snapshot with keyframe interpolation enabled.
+You can use the Annotation Hub API to create an export snapshot with keyframe interpolation enabled.
 
 **Endpoint:**
 ```
@@ -224,16 +224,16 @@ curl -X POST 'https://your-label-studio-domain.com/api/projects/{project_id}/exp
        -o 'exported_annotations.json'
      ```
 
-#### Use the Label Studio SDK
+#### Use the Annotation Hub SDK
 
-If you're using the Label Studio SDK, you can create an export with interpolation enabled:
+If you're using the Annotation Hub SDK, you can create an export with interpolation enabled:
 
 **Python code example:**
 
 ```python
 from label_studio_sdk import Client
 import time
-# Connect to Label Studio
+# Connect to Annotation Hub
 ls = Client(url='http://localhost:8080', api_key='YOUR_API_KEY')
 # Get your project by ID
 project = ls.get_project(PROJECT_ID)
@@ -265,11 +265,11 @@ print(f'Exported data saved to {export_file_path}')
 **Notes:**
 - Replace `YOUR_API_KEY` with your actual API key.
 - Replace `PROJECT_ID` with your project ID.
-- Ensure that you have installed the latest version of the Label Studio SDK.
+- Ensure that you have installed the latest version of the Annotation Hub SDK.
 
 #### Use the Command Line Interface (CLI)
 
-You can use the Label Studio CLI to export annotations with interpolated keyframes.
+You can use the Annotation Hub CLI to export annotations with interpolated keyframes.
 
 **Command:**
 ```bash
@@ -295,7 +295,7 @@ curl -X GET 'https://your-label-studio-domain.com/api/projects/{project_id}/expo
   -o 'exported_annotations.json'
 ```
 
-## Label Studio UI enhancements
+## Annotation Hub UI enhancements
 
 The video player functionality includes the following UI enhancements:
 1. Dual ‘Region’ and ‘Details’ control panels vs. a single sidebar, allowing annotators to view all pertinent information about the task without scrolling.
@@ -317,7 +317,7 @@ The video player provides the following use cases:
 Video object detection has analytics that are built on top of the video. For example, if you look at a video you will see the bounding boxes that have tracking objects on the video.
 
 ### Enhance images
-In the Label Studio UI, the video interface presents the main video canvas with controls that allows annotators to more precisely label blurry images using the following operations:
+In the Annotation Hub UI, the video interface presents the main video canvas with controls that allows annotators to more precisely label blurry images using the following operations:
 
 **Zoom in, zoom out, zoom to fit, or zoom to 100%.**
 

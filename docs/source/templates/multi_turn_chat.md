@@ -14,12 +14,12 @@ date: 2025-01-21 10:49:57
 
 This template uses the example available here: [Multi-turn Chat Labeling: Evaluating Virtual Assistant Conversations](https://github.com/HumanSignal/label-studio-examples/blob/main/multi-turn-chat/Readme.md)
 
-You can use this example to evaluate multi-turn chat conversations in Label Studio, identifying areas to enhance your virtual assistant’s performance and user experience.
+You can use this example to evaluate multi-turn chat conversations in Annotation Hub, identifying areas to enhance your virtual assistant’s performance and user experience.
 
 For this example, you will need the following:
 
-- Label Studio instance
-- Label Studio SDK (`pip install label-studio-sdk`)
+- Annotation Hub instance
+- Annotation Hub SDK (`pip install label-studio-sdk`)
 - Python 3.8+ with pandas
 
 ## Labeling configuration

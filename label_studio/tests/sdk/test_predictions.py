@@ -65,7 +65,7 @@ def test_create_predictions_with_import(django_live_url, business_client):
         id=p.id,
         request=[
             {'my_text': 'Hello world', 'my_label': 'Positive'},
-            {'my_text': 'Goodbye Label Studio', 'my_label': 'Negative'},
+            {'my_text': 'Goodbye Annotation Hub', 'my_label': 'Negative'},
             {'my_text': 'What a beautiful day', 'my_label': 'Positive'},
         ],
         preannotated_from_fields=['my_label'],
@@ -90,7 +90,7 @@ def test_create_predictions_with_import(django_live_url, business_client):
         ],
     )
     task2 = TaskValue(
-        data={'my_text': 'Goodbye Label Studio'},
+        data={'my_text': 'Goodbye Annotation Hub'},
         predictions=[
             PredictionValue(
                 result=[li.get_control('sentiment_class').label(['Negative'])],

@@ -35,7 +35,7 @@ It works as follows:
 
 ## Plugin
 
-This plugin will work as-is with the demo check images. For your own purposes, you will want host images that Label Studio can access. 
+This plugin will work as-is with the demo check images. For your own purposes, you will want host images that Annotation Hub can access. 
 
 ```javascript
 /**

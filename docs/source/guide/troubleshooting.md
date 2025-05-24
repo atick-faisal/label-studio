@@ -1,18 +1,18 @@
 ---
-title: Troubleshooting Label Studio
-short: Troubleshooting Label Studio
+title: Troubleshooting Annotation Hub
+short: Troubleshooting Annotation Hub
 tier: opensource
 type: guide
 order: 460
 order_enterprise: 0
 hide_menu: true
-meta_title: Troubleshooting Label Studio
-meta_description: Troubleshooting issues in Label Studio Community Edition
+meta_title: Troubleshooting Annotation Hub
+meta_description: Troubleshooting issues in Annotation Hub Community Edition
 date: 2024-09-03 09:57:28
 ---
 
 !!! error Enterprise
-    This page covers common user troubleshooting scenarios for Label Studio Community version. For information specific to Label Studio Enterprise, see our [support center articles](https://support.humansignal.com/hc/en-us). 
+    This page covers common user troubleshooting scenarios for Annotation Hub Community version. For information specific to Annotation Hub Enterprise, see our [support center articles](https://support.humansignal.com/hc/en-us). 
 
 
 ## Installation
@@ -24,11 +24,11 @@ See [Troubleshoot installation issues](install_troubleshoot).
 
 ### Blank page when loading a project
 
-After starting Label Studio and opening a project, you see a blank page. Several possible issues could be the cause.
+After starting Annotation Hub and opening a project, you see a blank page. Several possible issues could be the cause.
 
-If you specify a host without a protocol such as `http://` or `https://` when starting Label Studio, Label Studio can fail to locate the correct files to load the project page.
+If you specify a host without a protocol such as `http://` or `https://` when starting Annotation Hub, Annotation Hub can fail to locate the correct files to load the project page.
 
-To resolve this issue, update the host specified as an environment variable or when starting Label Studio. See [Start Label Studio](start).
+To resolve this issue, update the host specified as an environment variable or when starting Annotation Hub. See [Start Annotation Hub](start).
 
 ## Labeling
 
@@ -36,7 +36,7 @@ To resolve this issue, update the host specified as an environment variable or w
 
 * If you're using the SQLite database and another user imports a large volume of data, labeling might slow down for other users on the server due to the database load. 
 
-* If you want to upload a large volume of data (thousands of items), consider doing that at a time when people are not labeling or use a different database backend such as PostgreSQL or Redis. You can run Docker Compose from the root directory of Label Studio to use PostgreSQL: `docker-compose up -d`, or see [Sync data from cloud or database storage](storage). 
+* If you want to upload a large volume of data (thousands of items), consider doing that at a time when people are not labeling or use a different database backend such as PostgreSQL or Redis. You can run Docker Compose from the root directory of Annotation Hub to use PostgreSQL: `docker-compose up -d`, or see [Sync data from cloud or database storage](storage). 
 
 * If you are using a labeling schema that has many thousands of labels, consider using an [external taxonomy](/tags/taxonomy) instead. 
 
@@ -106,19 +106,19 @@ See [Pre-annotations](#Pre-annotations) below.
 
 ### Can't label PDF data
 
-Label Studio does not support labeling PDF files directly. However, you can convert files to HTML using your PDF viewer or another tool and label the PDF as part of the HTML. See an example labeling configuration in the [Label Studio playground](/playground/?config=%3CView%3E%3Cbr%3E%20%20%3CHyperText%20name%3D%22pdf%22%20value%3D%22%24pdf%22%2F%3E%3Cbr%3E%3Cbr%3E%20%20%3CHeader%20value%3D%22Rate%20this%20article%22%2F%3E%3Cbr%3E%20%20%3CRating%20name%3D%22rating%22%20toName%3D%22pdf%22%20maxRating%3D%2210%22%20icon%3D%22star%22%20size%3D%22medium%22%20%2F%3E%3Cbr%3E%3Cbr%3E%20%20%3CChoices%20name%3D%22choices%22%20choice%3D%22single-radio%22%20toName%3D%22pdf%22%20showInline%3D%22true%22%3E%3Cbr%3E%20%20%20%20%3CChoice%20value%3D%22Important%20article%22%2F%3E%3Cbr%3E%20%20%20%20%3CChoice%20value%3D%22Yellow%20press%22%2F%3E%3Cbr%3E%20%20%3C%2FChoices%3E%3Cbr%3E%3C%2FView%3E%3Cbr%3E).
+Annotation Hub does not support labeling PDF files directly. However, you can convert files to HTML using your PDF viewer or another tool and label the PDF as part of the HTML. See an example labeling configuration in the [Annotation Hub playground](/playground/?config=%3CView%3E%3Cbr%3E%20%20%3CHyperText%20name%3D%22pdf%22%20value%3D%22%24pdf%22%2F%3E%3Cbr%3E%3Cbr%3E%20%20%3CHeader%20value%3D%22Rate%20this%20article%22%2F%3E%3Cbr%3E%20%20%3CRating%20name%3D%22rating%22%20toName%3D%22pdf%22%20maxRating%3D%2210%22%20icon%3D%22star%22%20size%3D%22medium%22%20%2F%3E%3Cbr%3E%3Cbr%3E%20%20%3CChoices%20name%3D%22choices%22%20choice%3D%22single-radio%22%20toName%3D%22pdf%22%20showInline%3D%22true%22%3E%3Cbr%3E%20%20%20%20%3CChoice%20value%3D%22Important%20article%22%2F%3E%3Cbr%3E%20%20%20%20%3CChoice%20value%3D%22Yellow%20press%22%2F%3E%3Cbr%3E%20%20%3C%2FChoices%3E%3Cbr%3E%3C%2FView%3E%3Cbr%3E).
 
 ## Cloud and local storage
 
 When working with an external Cloud Storage connection (S3, GCS, Azure), keep the following in mind:
 
-* Label Studio doesn’t import the data stored in the bucket, but instead creates *references* to the objects. Therefore, you have full access control on the data to be synced and shown on the labeling screen.
+* Annotation Hub doesn’t import the data stored in the bucket, but instead creates *references* to the objects. Therefore, you have full access control on the data to be synced and shown on the labeling screen.
 * Sync operations with external buckets only goes one way. It either creates tasks from objects on the bucket (Source storage) or pushes annotations to the output bucket (Target storage). Changing something on the bucket side doesn’t guarantee consistency in results.
-* We recommend using a separate bucket folder for each Label Studio project.
+* We recommend using a separate bucket folder for each Annotation Hub project.
 
 ### CORS errors
 
-If you have not set up CORS, you cannot view cloud storage data from Label Studio. You might see a link to the data rather than a preview of the data, or you might see a CORS error in your web browser console:
+If you have not set up CORS, you cannot view cloud storage data from Annotation Hub. You might see a link to the data rather than a preview of the data, or you might see a CORS error in your web browser console:
 
 * For Amazon S3, see [Configuring and using cross-origin resource sharing (CORS)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/cors.html) in the Amazon S3 User Guide.
 * For GCS, see [Configuring cross-origin resource sharing (CORS)](https://cloud.google.com/storage/docs/configuring-cors) in the Google Cloud Storage documentation.
@@ -169,9 +169,9 @@ Then go to the cloud storage settings page and click **Edit** next to the cloud 
 * The **File Filter Regex** is set and correct. When no filters are specified, all found items are skipped. The filter should be a valid regular expression, not a wildcard (e.g. `.*` is a valid, `*.` is not valid)
 * **Treat every bucket object as a source file** should be toggled `ON` if you work with images, audio, text files or any other binary content stored in the bucket. 
 
-    This instructs Label Studio to create URI endpoints and store this as a labeling task payload, and resolve them into presigned `https` URLs when opening the labeling screen. 
+    This instructs Annotation Hub to create URI endpoints and store this as a labeling task payload, and resolve them into presigned `https` URLs when opening the labeling screen. 
 
-    If you store JSON tasks in the Label Studio format in your bucket - turn this toggle `OFF`. 
+    If you store JSON tasks in the Annotation Hub format in your bucket - turn this toggle `OFF`. 
 
 * Check for rq worker failures. An easy way to check rq workers is complete an export operation. 
 
@@ -184,13 +184,13 @@ Then go to the cloud storage settings page and click **Edit** next to the cloud 
 
     If you don’t see tasks in the Data Manager, your bucket doesn’t have GET permissions, only LIST permissions.  
 
-If there is only LIST permission, Label Studio can scan the bucket for the existence of objects without actually reading them. With GET permissions, Label Studio can read the data and extract your JSON files appropriately. 
+If there is only LIST permission, Annotation Hub can scan the bucket for the existence of objects without actually reading them. With GET permissions, Annotation Hub can read the data and extract your JSON files appropriately. 
 
 
 ### Tasks don't load the way I expect
 
-If the tasks sync to Label Studio but don't appear the way that you expect, maybe with URLs instead of images or with one task where you expect to see many, check the following:
-- If you're placing JSON files in [cloud storage](storage.html), place 1 task in each JSON file in the storage bucket. If you want to upload a JSON file from local storage into Label Studio, you can place multiple tasks in one JSON file. 
+If the tasks sync to Annotation Hub but don't appear the way that you expect, maybe with URLs instead of images or with one task where you expect to see many, check the following:
+- If you're placing JSON files in [cloud storage](storage.html), place 1 task in each JSON file in the storage bucket. If you want to upload a JSON file from local storage into Annotation Hub, you can place multiple tasks in one JSON file. 
 - If you're syncing image or audio files, make sure **Treat every bucket object as a source file** is enabled. 
 
 ### Unable to access local storage when using Windows
@@ -220,7 +220,7 @@ Check that you are using the correct annotation units.
 
 ### Annotators cannot see predictions
 
-If annotators can't see predictions or if you encounter unexpected behavior after you [import pre-annotations into Label Studio](predictions), review this guidance to resolve the issues.
+If annotators can't see predictions or if you encounter unexpected behavior after you [import pre-annotations into Annotation Hub](predictions), review this guidance to resolve the issues.
 
 First, in the **Settings > Annotation** section for your project, ensure that **Use predictions to pre-label tasks** is enabled.
 
@@ -325,11 +325,11 @@ In some situations it's very helpful to hide or to make `read-only` bounding box
 
 ### HTML label offsets are in the wrong places
 
-If the offsets for exported HTML labels don't match your expected output, such as with HTML named entity recognition (NER) tasks, the most common reason why is due to HTML minification. When you upload HTML files to Label Studio for labeling, the HTML is minified to remove whitespace. When you annotate those tasks, the offsets for the labels apply to the minified version of the HTML, rather than the original unmodified HTML files. 
+If the offsets for exported HTML labels don't match your expected output, such as with HTML named entity recognition (NER) tasks, the most common reason why is due to HTML minification. When you upload HTML files to Annotation Hub for labeling, the HTML is minified to remove whitespace. When you annotate those tasks, the offsets for the labels apply to the minified version of the HTML, rather than the original unmodified HTML files. 
 
 To prevent the HTML files from being minified, you can use a different import method. See [Import HTML data](tasks.html#Import-HTML-data) for more.
 
-If you want to correct existing annotations, you can minify your source HTML files in the same way that Label Studio does. The minification is performed with the following script:
+If you want to correct existing annotations, you can minify your source HTML files in the same way that Annotation Hub does. The minification is performed with the following script:
 
 ```python
 import htmlmin
@@ -344,7 +344,7 @@ If minification does not seem to be affecting the offset placements, complex CSS
 
 ## ML backends
 
-You can investigate most problems using the server console log. The machine learning backend runs as a separate server from Label Studio, so make sure you check the correct server console logs while troubleshooting. To see more detailed logs, start the ML backend server with the `--debug` option. 
+You can investigate most problems using the server console log. The machine learning backend runs as a separate server from Annotation Hub, so make sure you check the correct server console logs while troubleshooting. To see more detailed logs, start the ML backend server with the `--debug` option. 
 
 If you're running an ML backend: 
 - Production training logs are located in `my_backend/logs/rq.log`
@@ -355,20 +355,20 @@ If you're running an ML backend using Docker Compose:
 - Training logs are located in `logs/rq.log`
 - Main process and inference logs are located in `logs/uwsgi.log`
 
-### Label Studio default timeout settings for ML server requests
+### Annotation Hub default timeout settings for ML server requests
 
 Label studio has default timeouts for all types of requests to ML server. 
 
 Label studio has several different requests to ML server:
 1. Health - request to check ML backend health status when adding new ML backend (env variable `ML_TIMEOUT_HEALTH`)
 2. Setup - request to setup ML backend, initialize ML model (env variable ML_TIMEOUT_SETUP)
-3. Predict - prediction request when Label Studio gets predictions from ML backend (env variable `ML_TIMEOUT_PREDICT`)
+3. Predict - prediction request when Annotation Hub gets predictions from ML backend (env variable `ML_TIMEOUT_PREDICT`)
 4. Train - request to train ML backend  (env variable `ML_TIMEOUT_PREDICT`)
 5. Duplicate model - duplicate model request to ML backend (env variable `ML_TIMEOUT_PREDICT`)
 6. Delete - send delete request to ML backend (env variable `ML_TIMEOUT_PREDICT`)
 7. Train job status - request train job status from ML backend (env variable `ML_TIMEOUT_PREDICT`)
 
-You can adjust the timeout by setting an environment variables for each request or modify in Label Studio variables. These are the variables section in Label Studio (in seconds):
+You can adjust the timeout by setting an environment variables for each request or modify in Annotation Hub variables. These are the variables section in Annotation Hub (in seconds):
 
 ```python
 CONNECTION_TIMEOUT = float(get_env('ML_CONNECTION_TIMEOUT', 1))  
@@ -384,7 +384,7 @@ TIMEOUT_TRAIN_JOB_STATUS = float(get_env('ML_TIMEOUT_TRAIN_JOB_STATUS', 1))
 
 You can modify them in [ml/api_connector.py](https://github.com/HumanSignal/label-studio/blob/develop/label_studio/ml/api_connector.py#L22..L31).
 
-### I launched the ML backend, but it appears as **Disconnected** after adding it in the Label Studio UI
+### I launched the ML backend, but it appears as **Disconnected** after adding it in the Annotation Hub UI
 
 Your ML backend server might not have started properly. 
 
@@ -405,7 +405,7 @@ If you can't resolve the traceback issues by yourself, <a href="https://slack.la
 Your ML backend might be producing predictions in the wrong format. 
 
 - Check to see whether the ML backend predictions format follows the same structure as [predictions in imported pre-annotations](predictions.html).
-- Confirm that your project's label configuration matches the output produced by your ML backend. For example, use the `<Choices>` tag to create a class of predictions for text. See more [Label Studio tags](/tags). 
+- Confirm that your project's label configuration matches the output produced by your ML backend. For example, use the `<Choices>` tag to create a class of predictions for text. See more [Annotation Hub tags](/tags). 
 
 ### The model backend fails to start or run properly
 
@@ -413,16 +413,16 @@ If you see errors about missing packages in the terminal after starting your ML 
 
 ### ML backend is unable to access tasks
 
-Because the ML backend and Label Studio are different services, the assets (images, audio, etc.) that you label must be hosted and be accessible with URLs by the machine learning backend, otherwise it might fail to create predictions.
+Because the ML backend and Annotation Hub are different services, the assets (images, audio, etc.) that you label must be hosted and be accessible with URLs by the machine learning backend, otherwise it might fail to create predictions.
 
 ### I get a validation error when adding the ML backend
 
-If you get a validation error when adding the ML backend URL to your Label Studio project, check the following:
+If you get a validation error when adding the ML backend URL to your Annotation Hub project, check the following:
 - Is the labeling interface set up with a valid configuration?
 - Is the machine learning backend running? Run the following health check:<br/> `curl -X GET http://localhost:9090/health`
-- Is your machine learning backend available from your Label Studio instance? It must be available to the instance running Label Studio.
+- Is your machine learning backend available from your Annotation Hub instance? It must be available to the instance running Annotation Hub.
 
-If you're running Label Studio in Docker, you must run the machine learning backend inside the same Docker container, or otherwise make it available to the Docker container running Label Studio. You can use the `docker exec` command to run commands inside the Docker container, or use `docker exec -it <container_id> /bin/sh` to start a shell in the context of the container. See the [docker exec documentation](https://docs.docker.com/engine/reference/commandline/exec/). 
+If you're running Annotation Hub in Docker, you must run the machine learning backend inside the same Docker container, or otherwise make it available to the Docker container running Annotation Hub. You can use the `docker exec` command to run commands inside the Docker container, or use `docker exec -it <container_id> /bin/sh` to start a shell in the context of the container. See the [docker exec documentation](https://docs.docker.com/engine/reference/commandline/exec/). 
 
 
 ### No such file or directory error on Windows
@@ -479,7 +479,7 @@ on Windows due to line ending conversions.
 ### Pip Cache Reset in Docker Images
 
 Sometimes, you want to reset the pip cache to ensure that the latest versions of the dependencies are installed. 
-For example, Label Studio ML Backend library is used as 
+For example, Annotation Hub ML Backend library is used as 
 `label-studio-ml @ git+https://github.com/HumanSignal/label-studio-ml-backend.git` in requirements.txt. Let's assume that it
 is updated, and you want to jump on the latest version in your docker image with the ML model. 
 
@@ -497,10 +497,10 @@ Note that the provided ML backend examples are offered in development mode, and 
 
 ### ML backend fails to make simple auto-annotations or unable to see predictions
 
-You must ensure that the ML backend can access your Label Studio data. If it can't, you might encounter the following issues:
+You must ensure that the ML backend can access your Annotation Hub data. If it can't, you might encounter the following issues:
 
 * `no such file or directory` errors in the server logs.
-* You are unable to see predictions when loading tasks in Label Studio.
+* You are unable to see predictions when loading tasks in Annotation Hub.
 * Your ML backend appears to be connected properly, but cannot seem to complete any auto annotations within tasks. 
 
-To remedy this, ensure you have set the `LABEL_STUDIO_URL` and `LABEL_STUDIO_API_KEY` environment variables. For more information, see [Allow the ML backend to access Label Studio data](ml#Allow-the-ML-backend-to-access-Label-Studio-data).
+To remedy this, ensure you have set the `LABEL_STUDIO_URL` and `LABEL_STUDIO_API_KEY` environment variables. For more information, see [Allow the ML backend to access Annotation Hub data](ml#Allow-the-ML-backend-to-access-Label-Studio-data).

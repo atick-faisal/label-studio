@@ -1,6 +1,6 @@
 # Annotation Hub
 
-<video src="annotation_hub/demo.mp4" width="720" height="405" autoplay muted></video>
+![Demo](annotation_hub/demo.gif)
 
 ## 0. Local Development Setup
 

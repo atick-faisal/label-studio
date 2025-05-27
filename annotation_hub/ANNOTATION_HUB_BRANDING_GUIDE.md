@@ -1,5 +1,7 @@
 # Annotation Hub Branding Guide
 
+<video src="demo.mp4" width="1280" height="720" autoplay muted></video>
+
 ## 0. Local Development Setup
 
 Before making branding updates, ensure you can run the app locally and preview changes.

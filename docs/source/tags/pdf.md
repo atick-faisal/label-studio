@@ -3,7 +3,7 @@ title: PDF
 type: tags
 order: 302
 meta_title: PDF Tag for loading PDF documents
-meta_description: Label Studio PDF Tag for loading PDF documents for machine learning and data science projects.
+meta_description: Annotation Hub PDF Tag for loading PDF documents for machine learning and data science projects.
 ---
 
 The `Pdf` tag displays a PDF document for labeling. Use for performing document-level annotations, transcription, and summarization.

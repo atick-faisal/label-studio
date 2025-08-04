@@ -118,7 +118,7 @@ const formatTime = (time: number | string, timeFormat = "") => {
   return format(new Date(time));
 };
 
-// Utility to generate a sample task from a Label Studio XML config
+// Utility to generate a sample task from a Annotation Hub XML config
 export async function generateSampleTaskFromConfig(config: string): Promise<{
   id: number;
   data: Record<string, any>;

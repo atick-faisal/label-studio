@@ -75,9 +75,9 @@ Repeat these steps each time you make visual/UI-related changes.
 
 ---
 
-### Adaptation of Label Studio with Iberdrola Branding
+### Adaptation of Annotation Hub with Iberdrola Branding
 
-This guide provides clear instructions for integrating the **Iberdrola** branding into the **Label Studio** interface. It replaces visual assets, updates the theme colors, and modifies references to reflect the new identity. This document assumes you have a working Label Studio source code environment.
+This guide provides clear instructions for integrating the **Iberdrola** branding into the **Annotation Hub** interface. It replaces visual assets, updates the theme colors, and modifies references to reflect the new identity. This document assumes you have a working Annotation Hub source code environment.
 
 ---
 
@@ -87,7 +87,7 @@ This guide provides clear instructions for integrating the **Iberdrola** brandin
 **Change:**
 
 ```diff
-- <title>Label Studio</title>
+- <title>Annotation Hub</title>
 + <title>Annotation Hub</title>
 ```
 
@@ -108,7 +108,7 @@ label_studio/core/static/images/favicon.png
 
 ### 3.1 Logo Replacement
 
-Replace the Label Studio and HumanSignal logos with the **Annotation Hub** and **Iberdrola** SVGs.
+Replace the Annotation Hub and HumanSignal logos with the **Annotation Hub** and **Iberdrola** SVGs.
 
 **Location:**
 
@@ -210,12 +210,12 @@ Update the `grape`, `blueberry`, and `persimmon` color tokens with the Iberdrola
 
 ## 6. Global Text Replacement
 
-Replace all visible mentions of "Label Studio" with "Annotation Hub".
+Replace all visible mentions of "Annotation Hub" with "Annotation Hub".
 
 **Command:**
 
 ```bash
-rg -l "Label Studio" | xargs sed -i 's/Label\ Studio/Annotation\ Hub/g'
+rg -l "Annotation Hub" | xargs sed -i 's/Label\ Studio/Annotation\ Hub/g'
 ```
 
 Assuming you are on a UNIX-based system. If you are using Windows, GET HELP!
@@ -232,7 +232,7 @@ Assuming you are on a UNIX-based system. If you are using Windows, GET HELP!
 | Background SVG updated          | ⬜   |
 | Login gradient updated          | ⬜   |
 | Color tokens updated            | ⬜   |
-| "Label Studio" renamed globally | ⬜   |
+| "Annotation Hub" renamed globally | ⬜   |
 
 ## Segment Anything Backend for Annotation Hub
 
@@ -259,4 +259,4 @@ label-studio-ml start ../label-studio-ml-backend/label_studio_ml/examples/segmen
 
 Due to breaking changes from Meta [HERE](https://github.com/facebookresearch/sam2/blob/c2ec8e14a185632b0a5d8b161928ceb50197eddc/sam2/build_sam.py#L20), it is CRUCIAL that you run this command from the sam2 directory at your root directory.
 
-4. Connect running ML backend server to Label Studio: go to your project `Settings -> Machine Learning -> Add Model` and specify `http://localhost:9090` as a URL. Read more in the official [Label Studio documentation](https://labelstud.io/guide/ml#Connect-the-model-to-Label-Studio).
+4. Connect running ML backend server to Annotation Hub: go to your project `Settings -> Machine Learning -> Add Model` and specify `http://localhost:9090` as a URL. Read more in the official [Annotation Hub documentation](https://labelstud.io/guide/ml#Connect-the-model-to-Label-Studio).

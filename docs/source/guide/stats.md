@@ -143,7 +143,7 @@ Performs the default evaluation function for each control tag. For example for `
 | TimelineLabels   | Naive*                             |
 | VideoRectangle   | IOU                                |
 
-\* Naive -- “Naive” is Label Studio’s simplest pairwise agreement metric, and is essentially a python dictionary equality on the annotations' results.
+\* Naive -- “Naive” is Annotation Hub’s simplest pairwise agreement metric, and is essentially a python dictionary equality on the annotations' results.
 
 
 {% enddetails %}

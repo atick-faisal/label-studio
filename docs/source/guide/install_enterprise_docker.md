@@ -20,7 +20,7 @@ See [Secure Annotation Hub](security.html) for more details about security and h
 To install Annotation Hub Community Edition, see [Install Annotation Hub](https://labelstud.io/guide/install). This page is specific to the Enterprise version of Annotation Hub.
 
 !!! note
-    On-prem deployments of Label Studio Enterprise are not supported for Academic licenses.  
+    On-prem deployments of Annotation Hub Enterprise are not supported for Academic licenses.  
 
 {% insertmd includes/deploy.md %}
 

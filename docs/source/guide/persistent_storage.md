@@ -12,9 +12,9 @@ section: "Install & Setup"
 If you host Annotation Hub in the cloud, you want to set up persistent storage for uploaded task data, user images, and more in the same cloud service as your deployment.
 
 !!! note
-    By default, Label Studio leaves the serving of uploaded media to nginx, so to have persistent storage work correctly, you need nginx alongside Label Studio. This is the recommended configuration as it helps offload the Label Studio server.
+    By default, Annotation Hub leaves the serving of uploaded media to nginx, so to have persistent storage work correctly, you need nginx alongside Annotation Hub. This is the recommended configuration as it helps offload the Annotation Hub server.
 
-    However, if you are using a basic setup without nginx, you can set `USE_NGINX_FOR_UPLOADS=false` and `USE_NGINX_FOR_EXPORT_DOWNLOADS=false`. In this case, all serving will be handled by Label Studio. This configuration is not recommended because it will overload the uwsgi workers and can lead to a total Label Studio outage if users attempt to work with large files.
+    However, if you are using a basic setup without nginx, you can set `USE_NGINX_FOR_UPLOADS=false` and `USE_NGINX_FOR_EXPORT_DOWNLOADS=false`. In this case, all serving will be handled by Annotation Hub. This configuration is not recommended because it will overload the uwsgi workers and can lead to a total Annotation Hub outage if users attempt to work with large files.
 
 Follow the steps relevant for your deployment. If you use Docker Compose, select the cloud service you want to use as persistent storage:
 * [Set up Amazon S3](#Set-up-Amazon-S3) for Annotation Hub deployments in Amazon Web Services (AWS).

@@ -6,7 +6,7 @@ tier: enterprise
 order: 0
 order_enterprise: 71
 meta_title: Install Prompts
-meta_description: Install Prompts in a Label Studio Enterprise on-prem environment
+meta_description: Install Prompts in a Annotation Hub Enterprise on-prem environment
 section: "Install & Setup"
 parent: "install_k8s"
 parent_enterprise: "install_enterprise_k8s"
@@ -142,12 +142,12 @@ or
 kubectl logs <pod-name> -n prompt
 ```
 
-## 7. Update the Label Studio `values.yaml` file
+## 7. Update the Annotation Hub `values.yaml` file
 
-You will need to update the `global` section of your Label Studio Enterprise `values.yaml` file to include the following:
+You will need to update the `global` section of your Annotation Hub Enterprise `values.yaml` file to include the following:
 
-* Add the Adala endpoint, which will allow Label Studio to connect to Adala. 
-* Add the Prompts feature flag, to enable Prompts visibility within Label Studio. 
+* Add the Adala endpoint, which will allow Annotation Hub to connect to Adala. 
+* Add the Prompts feature flag, to enable Prompts visibility within Annotation Hub. 
 
 
 ```yaml
@@ -164,4 +164,4 @@ Note the following for `PROMPTER_ADALA_URL`:
 - `adala-adala-app` is the name of the Adala service automatically created by the Helm release.
 - Port `8000` is the default port where Adala listens.
 
-After updating the values file, redeploy Label Studio to apply the changes.
+After updating the values file, redeploy Annotation Hub to apply the changes.

@@ -810,7 +810,7 @@ describe("PlaygroundApp", () => {
         name: "Advanced config templates: Relations among entities",
         url: "http://localhost/?config=%3CView%3E%3Cbr%3E%20%20%3CHeader%20value%3D%22Note%3A%20To%20manage%20relations%20you%20need%20Label%20Studio%20entity%20panel%20to%20be%20shown%22%20%2F%3E%3Cbr%3E%3Cbr%3E%20%20%3CRelations%3E%3Cbr%3E%20%20%20%20%3CRelation%20value%3D%22Is%20A%22%20%2F%3E%3Cbr%3E%20%20%20%20%3CRelation%20value%3D%22Has%20Function%22%20%2F%3E%3Cbr%3E%20%20%20%20%3CRelation%20value%3D%22Involved%20In%22%20%2F%3E%3Cbr%3E%20%20%20%20%3CRelation%20value%3D%22Related%20To%22%20%2F%3E%3Cbr%3E%20%20%3C%2FRelations%3E%3Cbr%3E%3Cbr%3E%20%20%3CLabels%20name%3D%22label%22%20toName%3D%22text%22%3E%3Cbr%3E%20%20%20%20%3CLabel%20value%3D%22Subject%22%20%2F%3E%3Cbr%3E%20%20%20%20%3CLabel%20value%3D%22Object%22%20%2F%3E%3Cbr%3E%20%20%3C%2FLabels%3E%3Cbr%3E%3Cbr%3E%20%20%3CText%20name%3D%22text%22%20value%3D%22%24text%22%20%2F%3E%3Cbr%3E%3C%2FView%3E%3Cbr%3E",
         expectedConfig: `<View>
-      <Header value=\"Note: To manage relations you need Label Studio entity panel to be shown\" />·
+      <Header value=\"Note: To manage relations you need Annotation Hub entity panel to be shown\" />·
       <Relations>
         <Relation value=\"Is A\" />
         <Relation value=\"Has Function\" />

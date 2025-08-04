@@ -15,7 +15,7 @@ This template demonstrates the synchronization of media streams with the corresp
 <video src="https://htx-pub.s3.us-east-1.amazonaws.com/docs/timeseries-video-audio-sync.mp4" controls style="max-width:800px" />
 
 !!! note
-    **Requirements:** Label Studio >= 1.20
+    **Requirements:** Annotation Hub >= 1.20
 
 ### Time units and syncing
 

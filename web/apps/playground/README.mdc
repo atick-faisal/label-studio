@@ -10,7 +10,7 @@ The LabelStudio Playground is a standalone, embeddable React application for edi
 
 ## Main Features
 
-- **Live XML Config Editing:** Edit Label Studio XML configs in real time and instantly preview the result.
+- **Live XML Config Editing:** Edit Annotation Hub XML configs in real time and instantly preview the result.
 - **Sample Data Generation:** Automatically generates sample data for all supported media types (image, audio, video, PDF, website, CSV, OCR, etc.) using public domain URLs (primarily from Wikimedia Commons). This ensures copyright-safe, always-accessible previews.
 - **Live Annotation Output:** The preview panel displays the current annotation as a live-updating JSON string, reflecting user interactions in real time.
 - **Sticky Bottom Panel:** The right preview panel ensures the bottom panel (annotation controls) is always visible and sticky, with the main preview area scrollable.

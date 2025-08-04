@@ -160,7 +160,7 @@ Annotation Hub is available to everyone as open source software (Annotation Hub 
     <td style="text-align:center">✅</td>
   </tr>
   <tr>
-    <td><b>Bulk labeling</b><br/><a href="https://docs.humansignal.com/guide/labeling#Bulk-labeling">Classify data in batches.</a></td>
+    <td><b>Bulk labeling</b><br/><a href="https://docs.humansignal.com/guide/labeling_bulk">Classify data in batches.</a></td>
     <td style="text-align:center">❌</td>
     <td style="text-align:center">❌</td>
     <td style="text-align:center">✅</td>

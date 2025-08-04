@@ -8,12 +8,7 @@ meta_description: Customize Annotation Hub by displaying key-value pairs in task
 
 The `Table` tag is used to display object keys and values in a table.
 
-### Parameters
-
-| Param | Type | Description |
-| --- | --- | --- |
-| value | <code>string</code> | Data field value containing JSON type for Table |
-| [valueType] | <code>string</code> | Value to define the data type in Table |
+{% insertmd includes/tags/table.md %}
 
 ### Example
 
